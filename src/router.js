@@ -1,14 +1,16 @@
 /**
  * @Date:   2021-02-21T12:53:07+00:00
- * @Last modified time: 2021-02-21T12:55:53+00:00
+ * @Last modified time: 2021-02-21T15:46:50+00:00
  */
 
-import Vue from 'Vue'
+import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from './views/Home'
+import CoursesIndex from './views/courses/Index'
+// import CoursesShow from './views/courses/Show'
 
-vue.use(Router)
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
@@ -19,5 +21,15 @@ export default new Router({
       name: 'home',
       component:Home
     },
+    {
+      path: '/courses',
+      name: 'courses_index',
+      component:CoursesIndex
+    },
+    // {
+    //   path: '/courses/show',
+    //   name: 'courses_show',
+    //   component:CoursesShow
+    // },
   ]
 });

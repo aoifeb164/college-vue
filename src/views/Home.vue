@@ -1,19 +1,46 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-02-21T12:57:52+00:00
+@Last modified time: 2021-02-21T15:42:54+00:00
 -->
 <template>
 <div class="home">
   This is the Home page
+  <br>
+  <input type="email" v-model="form.email" />
+  <input type="password" v-model="form.password"  />
+  <button @click="login()" >Submit</button>
 </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'Home',
   components: {
-
-  }
+  },
+  data(){
+    return {
+      form: {
+        email: "",
+        password: ""
+      }
+    }
+  },
+  methods: {
+    login(){
+    axios.post('http://college.api:8000/api/login', {
+      email: this.form.email,
+      password: this.form.password
+    })
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.log(error)
+      console.log(error.response.data)
+    })
+    }
+  },
 }
 </script>
 <style>
