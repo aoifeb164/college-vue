@@ -1,10 +1,10 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-02-21T17:47:48+00:00
+@Last modified time: 2021-02-21T17:51:58+00:00
 -->
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-02-21T17:47:48+00:00
+@Last modified time: 2021-02-21T17:51:58+00:00
 -->
 <template>
 <div >
@@ -23,7 +23,7 @@ export default {
   },
   data(){
     return {
-
+courses: []
     }
   },
    mounted(){
@@ -38,6 +38,7 @@ export default {
    })
    .then(response => {
      console.log(response.data);
+     this.courses = response.data.data;
    })
    .catch(error => {
      console.log(error)
