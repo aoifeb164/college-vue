@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-02-21T15:42:54+00:00
+@Last modified time: 2021-02-21T17:37:01+00:00
 -->
 <template>
 <div class="home">
@@ -34,6 +34,8 @@ export default {
     })
     .then(response => {
       console.log(response.data);
+      localStorage.setItem('token', response.data.token);
+      this.$router.replace({ name: 'courses_index'});
     })
     .catch(error => {
       console.log(error)
