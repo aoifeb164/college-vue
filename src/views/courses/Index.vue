@@ -1,17 +1,17 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-02-21T17:51:58+00:00
+@Last modified time: 2021-02-24T16:13:51+00:00
 -->
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-02-21T17:51:58+00:00
+@Last modified time: 2021-02-24T16:13:51+00:00
 -->
 <template>
 <div >
   This is the Courses Index page
   <br>
 <button @click="getCourses()"> Get Courses </button>
-<button @click="Logout()"> Logout </button>
+<button @click="logout()"> Logout </button>
 </div>
 </template>
 
@@ -38,7 +38,7 @@ courses: []
    })
    .then(response => {
      console.log(response.data);
-     this.courses = response.data.data;
+     //this.courses = response.data.data;
    })
    .catch(error => {
      console.log(error)

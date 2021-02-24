@@ -1,14 +1,46 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-02-21T17:37:01+00:00
+@Last modified time: 2021-02-24T17:21:46+00:00
 -->
 <template>
 <div class="home">
-  This is the Home page
+ <b-container class="container" fluid>
+  <b-row>
+  <b-col>
+  <h3 class="heading">Login:</h3>
   <br>
-  <input type="email" v-model="form.email" />
-  <input type="password" v-model="form.password"  />
-  <button @click="login()" >Submit</button>
+  <!-- <input type="email" v-model="form.email" />
+  <input type="password" v-model="form.password"  /> -->
+
+
+  <b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1">
+  <b-form-input id="input-1" v-model="form.email" type="email" placeholder="Enter email" required></b-form-input>
+  </b-form-group>
+  <b-form-group class="textbox" id="input-group-1" label="Password:" label-for="input-1">
+  <b-form-input id="input-1" v-model="form.password" type="password" placeholder="Enter password" required></b-form-input>
+  </b-form-group>
+  <!-- <button class="submit" @click="login()" >Submit</button> -->
+  <b-button variant="outline-primary" class="submit" @click="login()" >Submit</b-button>
+</b-col>
+<!-- <div class="vl"></div> -->
+<b-col class="reg">
+<h3 class="heading">Register:</h3>
+<br>
+<!-- <input type="email" v-model="form.email" />
+<input type="password" v-model="form.password"  /> -->
+
+
+<b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1">
+<b-form-input id="input-1" v-model="form.email" type="email" placeholder="Enter email" required></b-form-input>
+</b-form-group>
+<b-form-group class="textbox" id="input-group-1" label="Password:" label-for="input-1">
+<b-form-input id="input-1" v-model="form.password" type="password" placeholder="Enter password" required></b-form-input>
+</b-form-group>
+<!-- <button class="submit" @click="login()" >Submit</button> -->
+<b-button variant="outline-primary" class="submit" @click="login()" >Submit</b-button>
+</b-col>
+</b-row>
+</b-container>
 </div>
 </template>
 
@@ -48,5 +80,31 @@ export default {
 <style>
 .home {
   text-align: center;
+
 }
+.textbox{
+  width: 500px;
+  text-align: left;
+}
+.heading{
+  padding-top: 120px;
+  text-align: left;
+
+}
+.submit{
+align:center;
+}
+
+.background {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    background-color: pink;
+}
+/* .vl {
+  margin-top: 60px;
+  border-left:2px solid black;
+  padding-right: 25px;
+  height: 500px;
+} */
 </style>
