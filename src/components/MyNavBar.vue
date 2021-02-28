@@ -1,15 +1,16 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-02-24T16:44:36+00:00
+@Last modified time: 2021-02-28T19:43:36+00:00
 -->
 <template>
   <div>
     <b-navbar type="dark" variant="dark">
-      <b-navbar-nav>
+      <b-navbar-nav style="width: 100%">
         <b-nav-item to="/">Home</b-nav-item>
         <b-nav-item to="/courses">Courses</b-nav-item>
         <b-nav-item to="/lecturers">Lecturers</b-nav-item>
         <b-nav-item to="/enrolments">Enrolments</b-nav-item>
+        <b-nav-item class="logout" @click="logout()"> Logout</b-nav-item>
       </b-navbar-nav>
     </b-navbar>
 
@@ -23,8 +24,37 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-  name: 'MyNavBar'
+  name: 'MyNavBar',
+  components: {
+  },
+  data(){
+    return {
+      form: {
+        email: "",
+        password: ""
+      }
+    }
+  },
+methods:{
+  logout() {
+    let token = localStorage.getItem('token');
+   axios.get('http://college.api:8000/api/logout', {
+     headers: {
+       Authorization: "Bearer " + token}
+   })
+   .then(response => {
+     console.log(response.data);
+        console.log("Logged Out");
+   })
+   .catch(error => {
+     console.log(error)
+     console.log(error.response.data)
+   })
+   localStorage.removeItem('token');
+ },
+}
 }
 </script>
 
@@ -42,5 +72,13 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.navbar.navbar-dark.bg-dark{
+    background-color: #AABB55!important;
+ }
+
+ .logout{
+   float: right!important;
+ }
 
 </style>

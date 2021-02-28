@@ -1,28 +1,21 @@
 <!--
-@Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-02-28T20:22:27+00:00
+@Date:   2021-02-28T19:54:47+00:00
+@Last modified time: 2021-02-28T20:16:07+00:00
 -->
-
 <template>
   <b-container fluid>
-<div>
+<div >
   <div class="text-center">
-  <H5 class="title">Welcome to the course index</H5>
+  <H5 class="title">Welcome to the lecturers index</H5>
 </div>
   <br>
   <div class="text-center">
-<b-button class="view" variant="outline-dark" @click="getCourses()">View Courses</b-button>
+<b-button class="view" variant="outline-dark" @click="getLecturers()">View Lecturers</b-button>
 </div>
 <!-- <button @click="logout()"> Logout </button> -->
 
-<!-- <table>
-  <tr>
-  <th>Title</th>
-  <th>Code</th>
-</tr>
-</table> -->
 <div>
-  <b-table hover :items="courses"></b-table>
+  <b-table hover :items="lecturers"></b-table>
 </div>
 </div>
 </b-container>
@@ -31,36 +24,35 @@
 <script>
  import axios from 'axios';
 export default {
-  name: 'CourseIndex',
+  name: 'LectureIndex',
   components: {
   },
   data(){
     return {
-courses: [],
+lecturers: [],
     }
   },
    mounted(){
-   this.getCourses();
+    this.getLecturers();
   },
   methods: {
-  getCourses(){
+  getLecturers(){
     let token = localStorage.getItem('token');
-  //  console.log(token);
+    //console.log(token);
 
-   axios.get('http://college.api:8000/api/courses', {
+   axios.get('http://college.api:8000/api/lecturers', {
      headers: {
        Authorization: "Bearer " + token}
    })
    .then(response => {
      console.log(response.data);
-     this.courses = response.data.data;
+     this.lecturers = response.data.data;
    })
    .catch(error => {
      console.log(error)
      console.log(error.response.data)
    })
  },
-
 },
 }
 </script>

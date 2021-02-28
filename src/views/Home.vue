@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-02-24T17:21:46+00:00
+@Last modified time: 2021-02-28T20:34:00+00:00
 -->
 <template>
 <div class="home">
@@ -14,13 +14,13 @@
 
 
   <b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1">
-  <b-form-input id="input-1" v-model="form.email" type="email" placeholder="Enter email" required></b-form-input>
+  <b-form-input id="input-1" v-model="form.email" type="email" placeholder="Enter email" required ></b-form-input>
   </b-form-group>
   <b-form-group class="textbox" id="input-group-1" label="Password:" label-for="input-1">
-  <b-form-input id="input-1" v-model="form.password" type="password" placeholder="Enter password" required></b-form-input>
+  <b-form-input id="input-1" v-model="form.password" type="password" placeholder="Enter password" required v-on:keyup.enter="login()"></b-form-input>
   </b-form-group>
   <!-- <button class="submit" @click="login()" >Submit</button> -->
-  <b-button variant="outline-primary" class="submit" @click="login()" >Submit</b-button>
+  <b-button variant="outline-dark" class="submit" @click="login()" >Submit</b-button>
 </b-col>
 <!-- <div class="vl"></div> -->
 <b-col class="reg">
@@ -29,15 +29,17 @@
 <!-- <input type="email" v-model="form.email" />
 <input type="password" v-model="form.password"  /> -->
 
-
+<b-form-group class="textbox" id="input-group-1" label="Name:" label-for="input-1">
+<b-form-input id="input-1" v-model="form.name1" type="name" placeholder="Enter name" required></b-form-input>
+</b-form-group>
 <b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1">
-<b-form-input id="input-1" v-model="form.email" type="email" placeholder="Enter email" required></b-form-input>
+<b-form-input id="input-1" v-model="form.email1" type="email" placeholder="Enter email" required></b-form-input>
 </b-form-group>
 <b-form-group class="textbox" id="input-group-1" label="Password:" label-for="input-1">
-<b-form-input id="input-1" v-model="form.password" type="password" placeholder="Enter password" required></b-form-input>
+<b-form-input id="input-1" v-model="form.password1" type="password" placeholder="Enter password" required v-on:keyup.enter="register()"></b-form-input>
 </b-form-group>
 <!-- <button class="submit" @click="login()" >Submit</button> -->
-<b-button variant="outline-primary" class="submit" @click="login()" >Submit</b-button>
+<b-button variant="outline-dark" class="submit" @click="register()" >Submit</b-button>
 </b-col>
 </b-row>
 </b-container>
@@ -73,7 +75,23 @@ export default {
       console.log(error)
       console.log(error.response.data)
     })
-    }
+  },
+  register(){
+  axios.post('http://college.api:8000/api/register', {
+    name: this.form.name1,
+    email: this.form.email1,
+    password: this.form.password1
+  })
+  .then(response => {
+    console.log(response.data);
+    localStorage.setItem('token', response.data.token);
+    this.$router.replace({ name: 'courses_index'});
+  })
+  .catch(error => {
+    console.log(error)
+    console.log(error.response.data)
+  })
+  }
   },
 }
 </script>
@@ -83,7 +101,7 @@ export default {
 
 }
 .textbox{
-  width: 500px;
+  width: 460px;
   text-align: left;
 }
 .heading{
