@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-02-28T20:22:27+00:00
+@Last modified time: 2021-03-02T17:52:03+00:00
 -->
 
 <template>
@@ -11,7 +11,11 @@
 </div>
   <br>
   <div class="text-center">
-<b-button class="view" variant="outline-dark" @click="getCourses()">View Courses</b-button>
+<!-- <b-button class="view" variant="outline-dark" @click="getCourses()">View Courses</b-button> -->
+<b-button class="view" variant="outline"><router-link :to="{ name: 'courses_create'}">Create Course</router-link></b-button>
+<b-button class="view" variant="outline"><router-link :to="{ name: 'courses_edit'}">Edit Course</router-link></b-button>
+<b-button class="view" variant="outline">Delete Course</b-button>
+
 </div>
 <!-- <button @click="logout()"> Logout </button> -->
 
@@ -21,8 +25,13 @@
   <th>Code</th>
 </tr>
 </table> -->
-<div>
-  <b-table hover :items="courses"></b-table>
+<!-- <router-link :to="{ name: 'courses_create'}">Create</router-link> -->
+<div class="container">
+  <b-table striped hover :items="courses" :fields="fields" >
+    <template #cell(title)="data">
+      <router-link :to="{ name: 'courses_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>
+    </template>
+  </b-table>
 </div>
 </div>
 </b-container>
@@ -36,6 +45,18 @@ export default {
   },
   data(){
     return {
+      fields: [
+        {
+          key: 'title',
+          sortable: true,
+        },
+        'code',
+        'points',
+        {
+          key: 'level',
+          sortable: true,
+        }
+        ],
 courses: [],
     }
   },
@@ -69,10 +90,10 @@ courses: [],
   text-align: center;
 }
 .title{
-  padding-top: 20px;
+  padding-top: 50px;
 }
 
 .view {
-   margin-bottom: 20px!important;
+   /* margin-bottom: 50px!important; */
 }
 </style>

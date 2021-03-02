@@ -1,10 +1,10 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-02-28T19:43:36+00:00
+@Last modified time: 2021-03-02T09:14:46+00:00
 -->
 <template>
   <div>
-    <b-navbar type="dark" variant="dark">
+    <!-- <b-navbar type="dark" variant="dark">
       <b-navbar-nav style="width: 100%">
         <b-nav-item to="/">Home</b-nav-item>
         <b-nav-item to="/courses">Courses</b-nav-item>
@@ -12,7 +12,37 @@
         <b-nav-item to="/enrolments">Enrolments</b-nav-item>
         <b-nav-item class="logout" @click="logout()"> Logout</b-nav-item>
       </b-navbar-nav>
-    </b-navbar>
+    </b-navbar> -->
+    <div>
+  <b-navbar toggleable="lg" type="dark" variant="dark">
+    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item to="/">Home</b-nav-item>
+        <b-nav-item to="/courses">Courses</b-nav-item>
+        <b-nav-item to="/lecturers">Lecturers</b-nav-item>
+        <b-nav-item to="/enrolments">Enrolments</b-nav-item>
+      </b-navbar-nav>
+
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+
+
+        <b-nav-item-dropdown right>
+          <!-- Using 'button-content' slot -->
+          <template #button-content>
+            <em>User</em>
+          </template>
+          <b-dropdown-item href="#">Profile</b-dropdown-item>
+          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+</div>
 
 <!-- <router-link to ="/">Home</router-link>
 <router-link to ="/about">About</router-link>
