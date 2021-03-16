@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-03-02T17:52:03+00:00
+@Last modified time: 2021-03-16T10:50:25+00:00
 -->
 
 <template>
@@ -15,8 +15,12 @@
 <b-button class="view" variant="outline"><router-link :to="{ name: 'courses_create'}">Create Course</router-link></b-button>
 <b-button class="view" variant="outline"><router-link :to="{ name: 'courses_edit'}">Edit Course</router-link></b-button>
 <b-button class="view" variant="outline">Delete Course</b-button>
-
+<input type="text" v-model="term" />
+<b-button @click="searchCourse()">
+  search
+</b-button>
 </div>
+
 <!-- <button @click="logout()"> Logout </button> -->
 
 <!-- <table>
@@ -27,7 +31,7 @@
 </table> -->
 <!-- <router-link :to="{ name: 'courses_create'}">Create</router-link> -->
 <div class="container">
-  <b-table striped hover :items="courses" :fields="fields" >
+  <b-table striped hover :items="filteredCourses" :fields="fields" >
     <template #cell(title)="data">
       <router-link :to="{ name: 'courses_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>
     </template>
@@ -38,7 +42,7 @@
 </template>
 
 <script>
- import axios from 'axios';
+import axios from '@/config/api';
 export default {
   name: 'CourseIndex',
   components: {
@@ -58,23 +62,35 @@ export default {
         }
         ],
 courses: [],
+term:"",
+filteredCourses: []
     }
   },
+  watch:{
+  term:function(){
+    this.searchCourse();
+  }
+},
    mounted(){
    this.getCourses();
   },
   methods: {
+    searchCourse(){
+      this.filteredCourses = this.courses.filter(course =>
+         course.title.toLowerCase().includes(this.term.toLowerCase()));
+    },
   getCourses(){
     let token = localStorage.getItem('token');
   //  console.log(token);
 
-   axios.get('http://college.api:8000/api/courses', {
+   axios.get('/courses', {
      headers: {
        Authorization: "Bearer " + token}
    })
    .then(response => {
      console.log(response.data);
      this.courses = response.data.data;
+     this.filteredCourses = this.courses;
    })
    .catch(error => {
      console.log(error)

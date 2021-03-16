@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-03-02T16:56:23+00:00
+@Last modified time: 2021-03-16T09:58:21+00:00
 -->
 <template>
   <div class="container">
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from '@/config/api';
 
 export default {
   name: 'CourseShow',
@@ -54,7 +54,7 @@ export default {
   mounted(){
     let token = localStorage.getItem('token');
 
-    axios.get(`http://college.api:8000/api/courses/${this.$route.params.id}`, {
+    axios.get(`/courses/${this.$route.params.id}`, {
       headers: { Authorization: "Bearer " + token}
     })
     .then(response => {

@@ -1,15 +1,10 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-02T17:50:45+00:00
+@Last modified time: 2021-03-16T10:04:53+00:00
 -->
 <template>
   <div class="container text-center">
     <h4 class="heading">Create Course:</h4>
-    <!-- title: <input type="text" v-model="form.title" /> <br>
-    code: <input type="text" v-model="form.code" /> <span v-if="errors.code"> {{ errors.code }} </span><br>
-    description: <input type="text" v-model="form.description" /> <br>
-    points: <input type="text" v-model="form.points" /> <span v-if="errors.points"> {{ errors.points }} </span><br>
-    level: <input type="text" v-model="form.level" /> <span v-if="errors.level"> {{ errors.level }} </span><br> -->
 <b-form>
     <b-form-group class="textbox" id="input-group-1" label="Title:" label-for="input-1">
     <b-form-input id="input-1" v-model="form.title" type="text" placeholder="Enter course title" required ></b-form-input>
@@ -27,14 +22,14 @@
     <b-form-input id="input-1" v-model="form.level" type="text" placeholder="Enter level" required ></b-form-input>
     </b-form-group>
 </b-form>
-    <b-button class="view" variant="outline-dark" @click="createCourse()">Submit</b-button>
 
+    <b-button class="view" variant="outline-dark" @click="createCourse()">Submit</b-button>
 
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from '@/config/api';
 
 export default {
   name: 'CourseCreate',
@@ -60,7 +55,7 @@ export default {
       let token = localStorage.getItem('token');
 
 
-      axios.post('http://college.api:8000/api/courses', {
+      axios.post('/courses', {
         title: this.form.title,
         code: this.form.code,
         description: this.form.description,

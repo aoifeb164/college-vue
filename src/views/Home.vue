@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-03-02T17:16:43+00:00
+@Last modified time: 2021-03-16T09:56:04+00:00
 -->
 <template>
 <div class="home">
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from '@/config/api';
 export default {
   name: 'Home',
   components: {
@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     login(){
-    axios.post('http://college.api:8000/api/login', {
+    axios.post('/login', {
       email: this.form.email,
       password: this.form.password
     })
@@ -77,7 +77,7 @@ export default {
     })
   },
   register(){
-  axios.post('http://college.api:8000/api/register', {
+  axios.post('/register', {
     name: this.form.name1,
     email: this.form.email1,
     password: this.form.password1

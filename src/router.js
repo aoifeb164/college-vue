@@ -1,6 +1,6 @@
 /**
  * @Date:   2021-02-21T12:53:07+00:00
- * @Last modified time: 2021-03-02T17:00:25+00:00
+ * @Last modified time: 2021-03-16T09:53:01+00:00
  */
 
 import Vue from 'vue'
@@ -11,7 +11,11 @@ import CoursesIndex from './views/courses/Index'
 import CoursesCreate from './views/courses/Create'
 import CoursesShow from './views/courses/Show'
 import CoursesEdit from './views/courses/Edit'
+
 import LecturersIndex from './views/lecturers/Index'
+import LecturersCreate from './views/lecturers/Create'
+import LecturersShow from './views/lecturers/Show'
+// import LecturersEdit from './views/lecturers/Edit'
 
 Vue.use(Router)
 
@@ -44,10 +48,26 @@ export default new Router({
       name: 'courses_edit',
       component:CoursesEdit
     },
+
+    {
+      path: '/lecturers/create',
+      name: 'lecturers_create',
+      component:LecturersCreate
+    },
     {
       path: '/lecturers',
       name: 'lecturers_index',
       component:LecturersIndex
     },
+    {
+      path: '/lecturers/show',
+      name: 'lecturers_show',
+      component:LecturersShow
+    },
+    // {
+    //   path: '/lecturers/edit',
+    //   name: 'lecturers_edit',
+    //   component:LecturersShow
+    // },
   ]
 });
