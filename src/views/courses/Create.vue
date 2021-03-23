@@ -1,11 +1,11 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-22T16:49:30+00:00
+@Last modified time: 2021-03-23T14:50:31+00:00
 -->
 <template>
   <div class="container text-center">
     <h4 class="heading">Create Course:</h4>
-<b-form>
+<b-form class="form">
     <b-form-group class="textbox" id="input-group-1" label="Title:" label-for="input-1">
     <b-form-input id="input-1" v-model="form.title" type="text" placeholder="Enter course title" required ></b-form-input>
     </b-form-group>
@@ -94,6 +94,6 @@ export default {
   text-align: center;
 }
 .form{
-background-color: blue;
+
 }
 </style>

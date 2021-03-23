@@ -1,17 +1,17 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-03-23T10:33:14+00:00
+@Last modified time: 2021-03-23T14:47:44+00:00
 -->
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-23T10:33:14+00:00
+@Last modified time: 2021-03-23T14:47:44+00:00
 -->
 <template>
   <div class="container text-center">
     <h4 class="heading">Edit Course:</h4>
-<b-form>
+<b-form class="form">
     <b-form-group class="textbox" id="input-group-1" label="Title:" label-for="input-1">
-    <b-form-input id="input-1" v-model="form.title" type="text" placeholder="Enter course title" required ></b-form-input>
+    <b-form-input id="input-1" v-model="form.title" type="text" placeholder="Enter course title" required></b-form-input>
     </b-form-group>
     <b-form-group class="textbox" id="input-group-1" label="Course code:" label-for="input-1">
     <b-form-input id="input-1" v-model="form.code" type="text" placeholder="Enter course code" required ></b-form-input>
@@ -115,6 +115,6 @@ this.getCourse();
   text-align: center;
 }
 .form{
-background-color: blue;
+margin-left: 300px;
 }
 </style>

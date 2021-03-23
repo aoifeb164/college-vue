@@ -1,15 +1,15 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-03-23T10:33:40+00:00
+@Last modified time: 2021-03-23T15:18:43+00:00
 -->
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-23T10:33:40+00:00
+@Last modified time: 2021-03-23T15:18:43+00:00
 -->
 <template>
   <div class="container text-center">
     <h4 class="heading">Edit Lecturer:</h4>
-<b-form>
+<b-form class="form">
     <b-form-group class="textbox" id="input-group-1" label="Name:" label-for="input-1">
     <b-form-input id="input-1" v-model="form.title" type="text" placeholder="Enter lecturer name" required ></b-form-input>
     </b-form-group>
@@ -109,6 +109,6 @@ this.getLecturer();
   text-align: center;
 }
 .form{
-background-color: blue;
+  margin-left: 300px;
 }
 </style>
