@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-03-16T09:57:46+00:00
+@Last modified time: 2021-03-22T17:17:12+00:00
 -->
 
 <template>
@@ -13,14 +13,16 @@
   <div class="text-center">
 <!-- <b-button class="view" variant="outline-dark" @click="getlecturers()">View lecturers</b-button> -->
 <b-button class="view" variant="outline"><router-link :to="{ name: 'lecturers_create'}">Create lecturer</router-link></b-button>
-<b-button class="view" variant="outline"><router-link :to="{ name: 'lecturers_edit'}">Edit lecturer</router-link></b-button>
-<b-button class="view" variant="outline">Delete lecturer</b-button>
+<!-- <b-button class="view" variant="outline">Delete lecturer</b-button> -->
 
 </div>
 <div class="container">
   <b-table striped hover :items="lecturers" :fields="fields" >
     <template #cell(title)="data">
       <router-link :to="{ name: 'lecturers_show', params: { id: data.item.id }}">{{ data.item.name }}</router-link>
+    </template>
+    <template #cell(actions)="data">
+  <router-link :to="{ name: 'lecturers_edit', params: { id: data.item.id }}">edit</router-link>
     </template>
   </b-table>
 </div>
@@ -46,16 +48,17 @@ export default {
         {
           key: 'phone',
           sortable: true,
-        }
+        },
+        'actions'
         ],
 lecturers: [],
     }
   },
    mounted(){
-   this.getlecturers();
+   this.getLecturers();
   },
   methods: {
-  getlecturers(){
+  getLecturers(){
     let token = localStorage.getItem('token');
   //  console.log(token);
 

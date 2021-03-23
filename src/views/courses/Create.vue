@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-16T10:04:53+00:00
+@Last modified time: 2021-03-22T16:49:30+00:00
 -->
 <template>
   <div class="container text-center">
@@ -21,6 +21,9 @@
     <b-form-group class="textbox" id="input-group-1" label="Course level:" label-for="input-1">
     <b-form-input id="input-1" v-model="form.level" type="text" placeholder="Enter level" required ></b-form-input>
     </b-form-group>
+    <!-- <b-form-group class="textbox" id="input-group-1" label="Course level:" label-for="input-1">
+    <b-form-input id="input-1" v-model="form.enrolments" type="text" placeholder="Enter level" required ></b-form-input>
+    </b-form-group> -->
 </b-form>
 
     <b-button class="view" variant="outline-dark" @click="createCourse()">Submit</b-button>
