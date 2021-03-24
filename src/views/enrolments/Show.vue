@@ -1,20 +1,20 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-03-24T15:27:57+00:00
+@Last modified time: 2021-03-24T15:08:54+00:00
 -->
 <template>
   <div class="container">
 
 
-  <h4  class="title">Name: </h4> {{ lecturer.name }} <br>
-  <h4>Address: </h4> {{ lecturer.address }}<br>
-  <h4>Email: </h4> {{ lecturer.email }}<br>
-  <h4>Phone: </h4> {{ lecturer.phone }}<br>
+  <h4  class="title">Title: </h4> {{ enrolment.title }} <br>
+  <h4>Code: </h4> {{ enrolment.code }}<br>
+  <h4>Description: </h4> {{ enrolment.description }}<br>
+  <h4>Points: </h4> {{ enrolment.points }}<br>
+  <h4>Level: </h4> {{ enrolment.level }}<br>
 
-
-  <b-table striped hover :items="lecturer.enrolments" :fields="fields">
+  <b-table striped hover :items="enrolment.enrolments" :fields="fields">
     <template #cell(title)="data">
-      <router-link :to="{ name: 'lecturers_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>
+      <router-link :to="{ name: 'enrolments_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>
     </template>
   </b-table>
 
@@ -25,7 +25,7 @@
 import axios from '@/config/api';
 
 export default {
-  name: 'LecturerShow',
+  name: 'EnrolmentShow',
   components: {
   },
   data() {
@@ -38,28 +38,28 @@ export default {
         'date',
         'time',
         'status',
-        'lecturer_id',
+        'enrolment_id',
         {
-          key: 'lecturer_id',
+          key: 'enrolment_id',
           sortable: true,
         },
         {
-          key: 'lecturer_name',
+          key: 'enrolment',
           sortable: true,
         }
         ],
-      lecturer: {}
+      enrolment: {}
     }
   },
   mounted(){
     let token = localStorage.getItem('token');
 
-    axios.get(`/lecturers/${this.$route.params.id}`, {
+    axios.get(`/enrolments/${this.$route.params.id}`, {
       headers: { Authorization: "Bearer " + token}
     })
     .then(response => {
       console.log(response.data);
-      this.lecturer = response.data.data;
+      this.enrolment = response.data.data;
 
     })
     .catch(error => {

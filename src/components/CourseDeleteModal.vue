@@ -1,11 +1,11 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-03-23T15:08:37+00:00
+@Last modified time: 2021-03-24T15:50:48+00:00
 -->
 
 <template>
   <div class="delete-course-modal">
-    <b-modal id ="courseDeleteModal" ref="courseDeleteModal" centered title="Delete course" class="title">
+    <b-modal id ="courseDeleteModal" ref="courseDeleteModal" title="Delete course" class="modal-title">
       <b-row>
         <h5 class="text">Do you still want to delete this course?</h5>
       </b-row>
@@ -36,10 +36,11 @@ export default {
       this.$refs.courseDeleteModal.show();
     },
     deleteCourse(){
+
       console.log(this.courseId);
       let token = localStorage.getItem('token');
 
-      axios.delete(`courses/`, {
+      axios.delete(`/courses/`, {
         headers: {
           Authorization: "Bearer " + token
         }
@@ -60,6 +61,9 @@ export default {
   </script>
 
   <style>
+  .modal-title{
+    margin-left: 160px;
+  }
   .text{
     margin-left: 60px;
   }
