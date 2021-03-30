@@ -1,12 +1,13 @@
 /**
  * @Date:   2021-02-21T12:53:07+00:00
- * @Last modified time: 2021-03-24T15:11:06+00:00
+ * @Last modified time: 2021-03-30T18:38:26+01:00
  */
 
 import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from './views/Home'
+import Dashboard from './views/Dashboard'
 import CoursesIndex from './views/courses/Index'
 import CoursesCreate from './views/courses/Create'
 import CoursesShow from './views/courses/Show'
@@ -32,6 +33,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component:Home
+    },
+    {
+      path: '/',
+      name: 'dashboard',
+      component:Dashboard
     },
     {
       path: '/courses/create',

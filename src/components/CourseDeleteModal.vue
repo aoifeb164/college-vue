@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-03-24T15:50:48+00:00
+@Last modified time: 2021-03-28T15:17:03+01:00
 -->
 
 <template>
@@ -40,7 +40,7 @@ export default {
       console.log(this.courseId);
       let token = localStorage.getItem('token');
 
-      axios.delete(`/courses/`, {
+      axios.delete(`/courses/${this.courseId}`, {
         headers: {
           Authorization: "Bearer " + token
         }

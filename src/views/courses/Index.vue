@@ -1,27 +1,33 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-03-23T13:59:47+00:00
+@Last modified time: 2021-03-30T19:40:00+01:00
 -->
 
 <template>
-<b-container fluid>
-  <div>
+
+
     <!-- <div class="text-center">
       <H5 class="title">Welcome to the course index</H5>
     </div> -->
+
+    <div class="container fluid">
     <br>
     <div class="text-center">
+      <b-row>
+        <b-button class="view" variant="outline">
+          <router-link :to="{ name: 'courses_create'}">Create Course</router-link>
+        </b-button>
+        <div class="search">
       <input type="text" v-model="term" @input="searchCourse()" v-on:keyup.enter="searchCourse()" placeholder="search course" />
-      <b-button @click="searchCourse()">
-        search
-      </b-button>
-      <br>
-      <b-button class="view" variant="outline">
-        <router-link :to="{ name: 'courses_create'}">Create Course</router-link>
+      <b-button class="view" variant="outline" @click="searchCourse()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
       </b-button>
     </div>
+    </b-row>
+    </div>
 
-    <div class="container">
       <b-table striped hover :items="filteredCourses" :fields="fields">
         <template #cell(title)="data">
           <router-link :to="{ name: 'courses_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>
@@ -40,14 +46,14 @@
           <CourseDeleteModal ref="CourseDeleteModal" :courseId="selectedCourse" />
 </template>
       </b-table>
-    </div>
+
   </div>
-</b-container>
 </template>
 
 <script>
 import axios from '@/config/api';
 import CourseDeleteModal from '@/components/CourseDeleteModal.vue'
+
 export default {
   name: 'CourseIndex',
   components: {
@@ -70,7 +76,8 @@ export default {
       courses: [],
       lecturers: [],
       term: "",
-      filteredCourses: []
+      filteredCourses: [],
+      selectedCourse:0,
     }
   },
   watch: {
@@ -141,9 +148,12 @@ export default {
 }
 
 .view {
-  /* margin-bottom: 50px!important; */
+margin-left: 20px;
 }
 
+.search{
+  margin-left: 680px;
+}
 .editButton{
   margin-right: 20px;
 }

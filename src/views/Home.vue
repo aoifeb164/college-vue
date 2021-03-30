@@ -1,27 +1,35 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-03-16T09:56:04+00:00
+@Last modified time: 2021-03-30T13:26:47+01:00
 -->
 <template>
 <div class="home">
  <b-container class="container" fluid>
-  <b-row>
-  <b-col>
+    <div>
+        <b-tabs class="box ">
+          <b-tab title="Login" active>
+            <b-card-text align="center">
+
   <h3 class="heading">Login:</h3>
   <br>
   <!-- <input type="email" v-model="form.email" />
   <input type="password" v-model="form.password"  /> -->
 
 
-  <b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1">
+  <b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1" align="left">
   <b-form-input id="input-1" v-model="form.email" type="email" placeholder="Enter email" required ></b-form-input>
   </b-form-group>
-  <b-form-group class="textbox" id="input-group-1" label="Password:" label-for="input-1">
+  <b-form-group class="textbox" id="input-group-1" label="Password:" label-for="input-1" align="left">
   <b-form-input id="input-1" v-model="form.password" type="password" placeholder="Enter password" required v-on:keyup.enter="login()"></b-form-input>
   </b-form-group>
   <!-- <button class="submit" @click="login()" >Submit</button> -->
   <b-button variant="outline-dark" class="submit" @click="login()" >Submit</b-button>
-</b-col>
+
+</b-card-text>
+    </b-tab>
+
+<b-tab title="Register">
+  <b-card-text align="center">
 <!-- <div class="vl"></div> -->
 <b-col class="reg">
 <h3 class="heading">Register:</h3>
@@ -29,19 +37,22 @@
 <!-- <input type="email" v-model="form.email" />
 <input type="password" v-model="form.password"  /> -->
 
-<b-form-group class="textbox" id="input-group-1" label="Name:" label-for="input-1">
+<b-form-group class="textbox" id="input-group-1" label="Name:" label-for="input-1" align="left">
 <b-form-input id="input-1" v-model="form.name1" type="name" placeholder="Enter name" required></b-form-input>
 </b-form-group>
-<b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1">
+<b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1" align="left">
 <b-form-input id="input-1" v-model="form.email1" type="email" placeholder="Enter email" required></b-form-input>
 </b-form-group>
-<b-form-group class="textbox" id="input-group-1" label="Password:" label-for="input-1">
+<b-form-group class="textbox" id="input-group-1" label="Password:" label-for="input-1" align="left">
 <b-form-input id="input-1" v-model="form.password1" type="password" placeholder="Enter password" required v-on:keyup.enter="register()"></b-form-input>
 </b-form-group>
 <!-- <button class="submit" @click="login()" >Submit</button> -->
 <b-button variant="outline-dark" class="submit" @click="register()" >Submit</b-button>
 </b-col>
-</b-row>
+</b-card-text>
+</b-tab>
+</b-tabs>
+</div>
 </b-container>
 </div>
 </template>
@@ -50,6 +61,9 @@
 import axios from '@/config/api';
 export default {
   name: 'Home',
+  props: {
+    // type: ,
+  },
   components: {
   },
   data(){
@@ -70,6 +84,7 @@ export default {
       console.log(response.data);
       localStorage.setItem('token', response.data.token);
       this.$router.replace({ name: 'courses_index'});
+      // this.$router.replace({ name: 'dashboard'});
     })
     .catch(error => {
       console.log(error)
@@ -101,8 +116,7 @@ export default {
 
 }
 .textbox{
-  width: 460px;
-  text-align: left;
+width: 580px;
 }
 .heading{
   padding-top: 120px;
@@ -119,10 +133,15 @@ align:center;
     height: 100%;
     background-color: pink;
 }
-/* .vl {
+.vl {
   margin-top: 60px;
   border-left:2px solid black;
   padding-right: 25px;
   height: 500px;
-} */
+}
+
+.box{
+  margin-top: 40px;
+
+}
 </style>

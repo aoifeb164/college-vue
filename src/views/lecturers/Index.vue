@@ -1,18 +1,18 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-03-24T15:46:40+00:00
+@Last modified time: 2021-03-30T20:27:50+01:00
 -->
 
+
 <template>
-  <b-container fluid>
-<div>
-  <div class="text-center">
-  <H5 class="title">Welcome to the lecturer index</H5>
-</div>
+<div class="container fluid">
   <br>
   <div class="text-center">
-<b-button class="view" variant="outline"><router-link :to="{ name: 'lecturers_create'}">Create lecturer</router-link></b-button>
-
+    <b-row>
+    <b-button class="view" variant="outline">
+      <router-link :to="{ name: 'lecturers_create'}">Create Lecturers</router-link>
+    </b-button>
+  </b-row>
 </div>
 <div class="container">
   <b-table striped hover :items="lecturers" :fields="fields" >
@@ -25,17 +25,16 @@
           <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
         </svg></router-link>
 
-      <b-icon @click="showDeleteModal(data.item.id)"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
+      <!-- <b-icon @click="showDeleteModal(data.item.id)"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
         </svg></b-icon>
 
-      <CourseDeleteModal ref="CourseDeleteModal" :courseId="selectedCourse" />
+      <CourseDeleteModal ref="CourseDeleteModal" :courseId="selectedCourse" /> -->
 </template>
   </b-table>
 </div>
 </div>
-</b-container>
 </template>
 
 <script>

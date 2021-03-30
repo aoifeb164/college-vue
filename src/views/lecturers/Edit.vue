@@ -1,25 +1,25 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-03-24T15:52:51+00:00
+@Last modified time: 2021-03-30T18:49:56+01:00
 -->
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-24T15:52:51+00:00
+@Last modified time: 2021-03-30T18:49:56+01:00
 -->
 <template>
   <div class="container text-center">
     <h4 class="heading">Edit Lecturer:</h4>
 <b-form class="form">
-    <b-form-group class="textbox" id="input-group-1" label="Name:" label-for="input-1">
+    <b-form-group class="textbox" id="input-group-1" label="Name:" label-for="input-1" align="left">
     <b-form-input id="input-1" v-model="form.name" type="text" placeholder="Enter lecturer name" required ></b-form-input>
     </b-form-group>
-    <b-form-group class="textbox" id="input-group-1" label="Address:" label-for="input-1">
+    <b-form-group class="textbox" id="input-group-1" label="Address:" label-for="input-1" align="left">
     <b-form-input id="input-1" v-model="form.address" type="text" placeholder="Enter address" required ></b-form-input>
     </b-form-group>
-    <b-form-group class="textbox" id="input-group-1" label="Email:" label-for="input-1">
+    <b-form-group class="textbox" id="input-group-1" label="Email:" label-for="input-1" align="left">
     <b-form-input id="input-1" v-model="form.email" type="text" placeholder="Enter email" required ></b-form-input>
     </b-form-group>
-    <b-form-group class="textbox" id="input-group-1" label="Phone:" label-for="input-1">
+    <b-form-group class="textbox" id="input-group-1" label="Phone:" label-for="input-1" align="left">
     <b-form-input id="input-1" v-model="form.phone" type="text" placeholder="Enter phone" required ></b-form-input>
     </b-form-group>
 </b-form>
@@ -100,9 +100,6 @@ this.getLecturer();
 </script>
 <style>
 
-.textbox{
-  width: 480px;
-}
 .heading{
   padding-top: 50px;
   padding-bottom: 20px;

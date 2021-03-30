@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-03-02T09:14:46+00:00
+@Last modified time: 2021-03-30T19:34:08+01:00
 -->
 <template>
   <div>
@@ -15,13 +15,14 @@
     </b-navbar> -->
     <div>
   <b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+    <b-navbar-brand href="#">CA2</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item to="/">Home</b-nav-item>
+        <b-nav-item to="/dashboard">Dashboard</b-nav-item>
         <b-nav-item to="/courses">Courses</b-nav-item>
         <b-nav-item to="/lecturers">Lecturers</b-nav-item>
         <b-nav-item to="/enrolments">Enrolments</b-nav-item>
