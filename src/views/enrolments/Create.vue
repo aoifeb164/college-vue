@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-30T18:58:41+01:00
+@Last modified time: 2021-03-31T16:47:32+01:00
 -->
 <template>
   <div class="container text-center">
@@ -15,6 +15,15 @@
     <b-form-group class="textbox" id="input-group-1" label="Status:" label-for="input-1" align="left">
     <b-form-input id="input-1" v-model="form.status" type="text" placeholder="Enter status" required ></b-form-input>
     </b-form-group>
+    <!-- <b-form-group>
+        <b-form-select v-model="selected">
+          <b-form-select-option :value="null">Please select an option</b-form-select-option>
+          <b-form-select-option value="a">career_break</b-form-select-option>
+          <b-form-select-option value="b">assigned</b-form-select-option>
+          <b-form-select-option value="c">interested</b-form-select-option>
+          <b-form-select-option value="d">associate</b-form-select-option>
+        </b-form-select>
+      </b-form-group> -->
     <b-form-group class="textbox" id="input-group-1" label="Course:" label-for="input-1" align="left">
     <b-form-input id="input-1" v-model="form.course_id" type="text" placeholder="Enter course id" required ></b-form-input>
     </b-form-group>
@@ -47,7 +56,8 @@ export default {
         course_id: "",
         lecturer_id: "",
       },
-      errors: {}
+      errors: {},
+      selected: null
     }
   },
   mounted(){
@@ -82,6 +92,7 @@ export default {
     }
   },
 }
+
 </script>
 <style>
 

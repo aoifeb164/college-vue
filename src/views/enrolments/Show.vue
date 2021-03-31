@@ -1,20 +1,20 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-03-24T15:08:54+00:00
+@Last modified time: 2021-03-31T16:51:40+01:00
 -->
 <template>
   <div class="container">
 
 
-  <h4  class="title">Title: </h4> {{ enrolment.title }} <br>
-  <h4>Code: </h4> {{ enrolment.code }}<br>
-  <h4>Description: </h4> {{ enrolment.description }}<br>
-  <h4>Points: </h4> {{ enrolment.points }}<br>
-  <h4>Level: </h4> {{ enrolment.level }}<br>
+  <h4  class="title">Date: </h4> {{ enrolment.date }} <br>
+  <h4>Time: </h4> {{ enrolment.time }}<br>
+  <h4>Status: </h4> {{ enrolment.status }}<br>
+  <h4>Course: </h4> {{ enrolment.course_id }}<br>
+  <h4>Lecturer: </h4> {{ enrolment.lecturer_id }}<br>
 
   <b-table striped hover :items="enrolment.enrolments" :fields="fields">
     <template #cell(title)="data">
-      <router-link :to="{ name: 'enrolments_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>
+      <router-link :to="{ name: 'enrolments_show', params: { id: data.item.id }}">{{ data.item.id }}</router-link>
     </template>
   </b-table>
 

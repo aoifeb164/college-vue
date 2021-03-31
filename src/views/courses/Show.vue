@@ -1,16 +1,16 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-03-16T09:58:21+00:00
+@Last modified time: 2021-03-31T18:41:26+01:00
 -->
 <template>
   <div class="container">
 
 
-  <h4  class="title">Title: </h4> {{ course.title }} <br>
-  <h4>Code: </h4> {{ course.code }}<br>
-  <h4>Description: </h4> {{ course.description }}<br>
-  <h4>Points: </h4> {{ course.points }}<br>
-  <h4>Level: </h4> {{ course.level }}<br>
+  <h2 class="title"> {{ course.title }} </h2>
+  <h5>Code: </h5> {{ course.code }}<br>
+  <h5>Description: </h5> {{ course.description }}<br>
+  <h5>Points: </h5> {{ course.points }}<br>
+  <h5>Level: </h5> {{ course.level }}<br>
 
   <b-table striped hover :items="course.enrolments" :fields="fields">
     <template #cell(title)="data">
@@ -40,11 +40,7 @@ export default {
         'status',
         'course_id',
         {
-          key: 'lecturer_id',
-          sortable: true,
-        },
-        {
-          key: 'lecturer',
+          key: 'lecturer.name',
           sortable: true,
         }
         ],

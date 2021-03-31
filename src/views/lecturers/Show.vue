@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-03-24T15:27:57+00:00
+@Last modified time: 2021-03-31T18:42:45+01:00
 -->
 <template>
   <div class="container">
@@ -38,13 +38,12 @@ export default {
         'date',
         'time',
         'status',
-        'lecturer_id',
         {
           key: 'lecturer_id',
           sortable: true,
         },
         {
-          key: 'lecturer_name',
+          key: 'course.title',
           sortable: true,
         }
         ],

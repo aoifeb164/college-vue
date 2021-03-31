@@ -1,21 +1,21 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-03-31T12:08:30+01:00
+@Last modified time: 2021-03-31T17:08:14+01:00
 -->
 
 <template>
-  <div class="course-delete-modal">
-    <b-modal id ="courseDeleteModal" ref="courseDeleteModal" title="Delete course" class="modal-title">
+  <div class="enrolment-delete-modal">
+    <b-modal id ="enrolmentDeleteModal" ref="enrolmentDeleteModal" title="Delete enrolment" class="modal-title">
       <b-row>
-        <h5 class="text">Do you still want to delete this course?</h5>
+        <h5 class="text">Do you still want to delete this enrolment?</h5>
       </b-row>
       <!-- <b-row>
-        <b-button @click="deleteCourse()" variant="danger" class="button">Delete</b-button>
+        <b-button @click="deleteEnrolment()" variant="danger" class="button">Delete</b-button>
       </b-row> -->
 
       <b-row class="justify-content-center">
         <b-button class="delete-modal-button" @click="hide();" variant="light"> cancel</b-button>
-        <b-button class="cancel-modal-button" @click="deleteCourse(); hide();" variant="danger"> delete</b-button>
+        <b-button class="cancel-modal-button" @click="deleteEnrolment(); hide();" variant="danger"> delete</b-button>
       </b-row>
 
     </b-modal>
@@ -25,9 +25,9 @@
 <script>
 import axios from '@/config/api';
 export default {
-  name: 'CourseDeleteModal' ,
+  name: 'EnrolmentDeleteModal' ,
   props: {
-    courseId: Number,
+    enrolmentId: Number,
   },
   data(){
     return {
@@ -39,17 +39,17 @@ export default {
   },
   methods: {
     show(){
-      this.$refs.courseDeleteModal.show();
+      this.$refs.enrolmentDeleteModal.show();
     },
     hide(){
-      this.$refs.courseDeleteModal.hide();
+      this.$refs.enrolmentDeleteModal.hide();
     },
-    deleteCourse(){
+    deleteEnrolment(){
 
-      console.log(this.courseId);
+      console.log(this.enrolmentId);
       let token = localStorage.getItem('token');
 
-      axios.delete(`/courses/${this.courseId}`, {
+      axios.delete(`/enrolments/${this.enrolmentId}`, {
         headers: {
           Authorization: "Bearer " + token
         }

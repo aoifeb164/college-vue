@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-03-30T19:34:08+01:00
+@Last modified time: 2021-03-31T18:25:38+01:00
 -->
 <template>
   <div>
@@ -37,8 +37,7 @@
           <template #button-content>
             <em>User</em>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          <b-dropdown-item @click="logout()"> Logout</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -78,6 +77,7 @@ methods:{
    .then(response => {
      console.log(response.data);
         console.log("Logged Out");
+          this.$router.replace({ name: 'home'});
    })
    .catch(error => {
      console.log(error)
