@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-03-31T18:34:25+01:00
+@Last modified time: 2021-03-31T19:18:17+01:00
 -->
 
 
@@ -103,7 +103,6 @@ selectedLecturer:0,
 }
 .lect {
 margin-left: 40px;
-margin-bottom: 20px;
 margin-top: 20px;
 }
 

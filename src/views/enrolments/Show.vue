@@ -1,12 +1,12 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-03-31T16:51:40+01:00
+@Last modified time: 2021-03-31T19:19:18+01:00
 -->
 <template>
   <div class="container">
 
 
-  <h4  class="title">Date: </h4> {{ enrolment.date }} <br>
+  <h2 class="title">Date: </h2> {{ enrolment.date }} <br>
   <h4>Time: </h4> {{ enrolment.time }}<br>
   <h4>Status: </h4> {{ enrolment.status }}<br>
   <h4>Course: </h4> {{ enrolment.course_id }}<br>

@@ -1,18 +1,18 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-03-31T18:42:45+01:00
+@Last modified time: 2021-03-31T19:15:40+01:00
 -->
 <template>
   <div class="container">
 
 
-  <h4  class="title">Name: </h4> {{ lecturer.name }} <br>
-  <h4>Address: </h4> {{ lecturer.address }}<br>
-  <h4>Email: </h4> {{ lecturer.email }}<br>
-  <h4>Phone: </h4> {{ lecturer.phone }}<br>
+  <h2 class="title">{{ lecturer.name }}</h2>
+  <h5>Address: </h5> {{ lecturer.address }}<br>
+  <h5>Email: </h5> {{ lecturer.email }}<br>
+  <h5>Phone: </h5> {{ lecturer.phone }}<br>
 
 
-  <b-table striped hover :items="lecturer.enrolments" :fields="fields">
+  <b-table hover :items="lecturer.enrolments" :fields="fields" class="table">
     <template #cell(title)="data">
       <router-link :to="{ name: 'lecturers_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>
     </template>
@@ -77,5 +77,8 @@ export default {
 
 .title{
   padding-top: 50px;
+}
+.table{
+  margin-top: 20px;
 }
 </style>

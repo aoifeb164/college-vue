@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-03-31T18:34:03+01:00
+@Last modified time: 2021-03-31T19:19:13+01:00
 -->
 
 <template>
@@ -144,7 +144,6 @@ export default {
 }
 .view {
 margin-left: 25px;
-margin-bottom: 20px;
 margin-top: 20px;
 }
 .search{

@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-03-31T17:50:35+01:00
+@Last modified time: 2021-03-31T19:23:37+01:00
 -->
 <template>
 <div class="home">
@@ -120,8 +120,6 @@ width: 580px;
 }
 .heading{
   padding-top: 120px;
-  text-align: left;
-
 }
 .submit{
 align:center;
