@@ -1,13 +1,13 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-04-01T17:42:18+01:00
+@Last modified time: 2021-04-01T22:04:51+01:00
 -->
 
 <template>
 <div class="container fluid">
   <div class="text-center">
     <b-row>
-      <h3 class="lect">Enrolments</h3>
+      <h3 class="view">Enrolments</h3>
       <b-button class="view" variant="outline">
         <router-link :to="{ name: 'enrolments_create'}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -17,8 +17,7 @@
   </b-row>
 </div>
 
-<div class="container">
-  <b-table hover :items="enrolments" :busy="isBusy" :fields="fields" >
+  <b-table hover id="my-table" :items="enrolments" :busy="isBusy" :fields="fields" :per-page="perPage" :current-page="currentPage">
 
     <template #table-busy>
       <div class="text-center text-danger my-2 loading">
@@ -45,7 +44,13 @@
       <EnrolmentDeleteModal ref="EnrolmentDeleteModal" :enrolmentId="selectedEnrolment" />
 </template>
   </b-table>
-</div>
+  <b-pagination
+   v-model="currentPage"
+   :total-rows="rows"
+   :per-page="perPage"
+   aria-controls="my-table"
+   align="center"
+ ></b-pagination>
 </div>
 </template>
 
@@ -60,6 +65,8 @@ export default {
   },
   data(){
     return {
+      perPage: 8,
+      currentPage: 1,
       isBusy:false,
       fields: [
         {
@@ -88,6 +95,11 @@ enrolments: [],
 courses:[],
 lecturers:[],
 selectedEnrolment:0,
+    }
+  },
+  computed: {
+    rows() {
+      return this.enrolments.length
     }
   },
    mounted(){

@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-04-01T18:11:37+01:00
+@Last modified time: 2021-04-01T22:03:01+01:00
 -->
 
 <template>
@@ -8,11 +8,13 @@
     <div class="text-center">
       <b-row>
         <h3 class="view">Courses</h3>
-        <b-button class="view" variant="outline">
-          <router-link :to="{ name: 'courses_create'}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+        <b-button class="view" variant="outline" v-b-toggle.sidebar-1>
+          <router-link :to="{ name: 'courses_create'}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
   <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-</svg></router-link>
+</svg>
+</router-link>
         </b-button>
 <div>
       <input type="text" v-model="term" @input="searchCourse()" v-on:keyup.enter="searchCourse()" placeholder="search course" class="search" />
@@ -110,7 +112,7 @@ export default {
     this.getCourses();
     this.getLecturers();
   },
-  methods: {
+  methods:{
     showDeleteModal(courseId) {
       this.selectedCourse = courseId
       this.$refs.CourseDeleteModal.show();

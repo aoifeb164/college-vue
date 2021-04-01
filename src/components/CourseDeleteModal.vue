@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-03-31T12:08:30+01:00
+@Last modified time: 2021-04-01T21:57:19+01:00
 -->
 
 <template>
@@ -9,13 +9,9 @@
       <b-row>
         <h5 class="text">Do you still want to delete this course?</h5>
       </b-row>
-      <!-- <b-row>
-        <b-button @click="deleteCourse()" variant="danger" class="button">Delete</b-button>
-      </b-row> -->
 
-      <b-row class="justify-content-center">
-        <b-button class="delete-modal-button" @click="hide();" variant="light"> cancel</b-button>
-        <b-button class="cancel-modal-button" @click="deleteCourse(); hide();" variant="danger"> delete</b-button>
+      <b-row align="center">
+      <b-button @click="deleteCourse()" variant="danger" class="button">Delete</b-button>
       </b-row>
 
     </b-modal>
@@ -40,9 +36,6 @@ export default {
   methods: {
     show(){
       this.$refs.courseDeleteModal.show();
-    },
-    hide(){
-      this.$refs.courseDeleteModal.hide();
     },
     deleteCourse(){
 

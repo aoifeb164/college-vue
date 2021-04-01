@@ -1,21 +1,19 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-04-01T16:53:14+01:00
+@Last modified time: 2021-04-01T21:49:38+01:00
 -->
 <template>
-<div class="home">
- <b-container class="container" fluid>
-    <div>
+ <div class="container">
         <b-tabs class="box ">
           <b-tab title="Login" active>
-            <b-card-text align="center">
+            <b-card-text>
 
-  <h3 class="heading">Login:</h3>
+  <h3 class="textheading">Login:</h3>
   <br>
   <!-- <input type="email" v-model="form.email" />
   <input type="password" v-model="form.password"  /> -->
 
-
+<div align="center">
   <b-form-group class="textbox" id="input-group-1" label="Email address:" label-for="input-1" align="left">
   <b-form-input id="input-1" v-model="form.email" type="email" placeholder="Enter email" required ></b-form-input>
   </b-form-group>
@@ -24,19 +22,18 @@
   </b-form-group>
   <!-- <button class="submit" @click="login()" >Submit</button> -->
   <b-button variant="outline-dark" class="submit" @click="login()" >Submit</b-button>
-
+</div>
 </b-card-text>
     </b-tab>
 
 <b-tab title="Register">
-  <b-card-text align="center">
+  <b-card-text>
 <!-- <div class="vl"></div> -->
-<b-col class="reg">
-<h3 class="heading">Register:</h3>
+<h3 class="textheading">Register:</h3>
 <br>
 <!-- <input type="email" v-model="form.email" />
 <input type="password" v-model="form.password"  /> -->
-
+<div align="center">
 <b-form-group class="textbox" id="input-group-1" label="Name:" label-for="input-1" align="left">
 <b-form-input id="input-1" v-model="form.name1" type="name" placeholder="Enter name" required></b-form-input>
 </b-form-group>
@@ -48,12 +45,10 @@
 </b-form-group>
 <!-- <button class="submit" @click="login()" >Submit</button> -->
 <b-button variant="outline-dark" class="submit" @click="register()" >Submit</b-button>
-</b-col>
+</div>
 </b-card-text>
 </b-tab>
 </b-tabs>
-</div>
-</b-container>
 </div>
 </template>
 
@@ -112,15 +107,9 @@ export default {
 }
 </script>
 <style>
-.home {
-  text-align: center;
 
-}
 .textbox{
 width: 580px;
-}
-.heading{
-  padding-top: 120px;
 }
 .submit{
 align:center;
@@ -141,6 +130,9 @@ align:center;
 
 .box{
   margin-top: 40px;
-
+}
+.textheading{
+  padding-top: 50px;
+  padding-left: 265px;
 }
 </style>
