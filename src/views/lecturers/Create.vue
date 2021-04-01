@@ -1,9 +1,9 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-31T10:50:24+01:00
+@Last modified time: 2021-04-01T17:28:11+01:00
 -->
 <template>
-  <div class="container text-center">
+  <div class="container">
     <h4 class="heading">Create Lecturer:</h4>
 <b-form class="form">
     <b-form-group class="textbox" id="input-group-1" label="Name:" label-for="input-1" align="left">
@@ -19,9 +19,9 @@
     <b-form-input id="input-1" v-model="form.email" type="text" placeholder="Enter email address" required ></b-form-input>
     </b-form-group>
 </b-form>
-
+<div class="text-center">
     <b-button class="view" variant="outline-dark" @click="createLecturer()">Submit</b-button>
-
+</div>
   </div>
 </template>
 
@@ -80,7 +80,6 @@ export default {
 .heading{
   padding-top: 50px;
   padding-bottom: 20px;
-  text-align: center;
 }
 .form{
 

@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-03-31T19:18:17+01:00
+@Last modified time: 2021-04-01T17:42:12+01:00
 -->
 
 
@@ -10,14 +10,25 @@
     <b-row>
       <h3 class="lect">Lecturers</h3>
       <b-button class="view" variant="outline">
-        <router-link :to="{ name: 'lecturers_create'}">Create Lecturer</router-link>
+        <router-link :to="{ name: 'lecturers_create'}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+</svg></router-link>
       </b-button>
   </b-row>
 </div>
 <div class="container">
-  <b-table hover :items="lecturers" :fields="fields">
+  <b-table hover :items="lecturers" :busy="isBusy" :fields="fields">
+
+    <template #table-busy>
+      <div class="text-center text-danger my-2 loading">
+        <b-spinner style="width: 3rem; height: 3rem;" label="Large Spinner" variant="dark"></b-spinner><br>
+        <strong class="loadtext">Loading...</strong>
+      </div>
+    </template>
+
     <template #cell(name)="data">
-      <router-link :to="{ name: 'lecturers_show', params: { id: data.item.id }}">{{ data.item.name }}</router-link>
+      <router-link :to="{ name: 'lecturers_show', params: { id: data.item.id }}" class="courseTitle">{{ data.item.name }}</router-link>
     </template>
     <template #cell(actions)="data">
       <router-link :to="{ name: 'lecturers_edit', params: { id: data.item.id }}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil-square editButton" viewBox="0 0 16 16">
@@ -48,6 +59,7 @@ export default {
   },
   data(){
     return {
+      isBusy: false,
       fields: [
         {
           key: 'name',
@@ -75,6 +87,7 @@ selectedLecturer:0,
     },
   getLecturers(){
     let token = localStorage.getItem('token');
+    this.isBusy = true;
   //  console.log(token);
 
    axios.get('/lecturers', {
@@ -84,6 +97,7 @@ selectedLecturer:0,
    .then(response => {
      console.log(response.data);
      this.lecturers = response.data.data;
+     this.isBusy = false;
    })
    .catch(error => {
      console.log(error)

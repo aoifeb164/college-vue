@@ -1,13 +1,13 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-03-31T12:13:24+01:00
+@Last modified time: 2021-04-01T17:36:33+01:00
 -->
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-31T12:13:24+01:00
+@Last modified time: 2021-04-01T17:36:33+01:00
 -->
 <template>
-  <div class="container text-center">
+  <div class="container">
     <h4 class="heading">Edit Course:</h4>
 <b-form class="form">
     <b-form-group class="textbox" id="input-group-1" label="Title:" label-for="input-1" align="left">
@@ -26,9 +26,9 @@
     <b-form-input id="input-1" v-model="form.level" type="text" placeholder="Enter level" required ></b-form-input>
     </b-form-group>
 </b-form>
-
+<div class="text-center">
     <b-button class="view" variant="outline-dark" @click="editCourse()">Submit</b-button>
-
+</div>
   </div>
 </template>
 
@@ -108,7 +108,6 @@ this.getCourse();
 .heading{
   padding-top: 50px;
   padding-bottom: 20px;
-  text-align: center;
 }
 .form{
 margin-left: 300px;

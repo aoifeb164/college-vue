@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-03-31T18:25:38+01:00
+@Last modified time: 2021-04-01T16:51:36+01:00
 -->
 <template>
   <div>
@@ -32,7 +32,7 @@
       <b-navbar-nav class="ml-auto">
 
 
-        <b-nav-item-dropdown right>
+        <b-nav-item-dropdown v-if="loggedIn" text="User" right>
           <!-- Using 'button-content' slot -->
           <template #button-content>
             <em>User</em>
@@ -43,13 +43,6 @@
     </b-collapse>
   </b-navbar>
 </div>
-
-<!-- <router-link to ="/">Home</router-link>
-<router-link to ="/about">About</router-link>
-<router-link to ="/conact">Contact</router-link> -->
-
-<!-- <router-link :to ="{ name: 'testing', params: {id: 123 }}">Testing</router-link> -->
-
   </div>
 </template>
 
@@ -57,6 +50,9 @@
 import axios from 'axios';
 export default {
   name: 'MyNavBar',
+  props: {
+  loggedIn: Boolean //<-- this is new line
+},
   components: {
   },
   data(){
@@ -69,7 +65,7 @@ export default {
   },
 methods:{
   logout() {
-    let token = localStorage.getItem('token');
+    let token = localStorage.removeItem('token');
    axios.get('http://college.api:8000/api/logout', {
      headers: {
        Authorization: "Bearer " + token}
@@ -84,6 +80,8 @@ methods:{
      console.log(error.response.data)
    })
    localStorage.removeItem('token');
+   this.$emit('logout'); //<-- tells App.vue to update loggedIn
+this.$router.push('/');
  },
 }
 }
@@ -104,9 +102,9 @@ methods:{
   color: #42b983;
 }
 
-.navbar.navbar-dark.bg-dark{
+/* .navbar.navbar-dark.bg-dark{
     background-color: #AABB55!important;
- }
+ } */
 
  .logout{
    float: right!important;

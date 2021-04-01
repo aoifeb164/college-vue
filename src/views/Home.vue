@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-03-31T19:23:37+01:00
+@Last modified time: 2021-04-01T16:53:14+01:00
 -->
 <template>
 <div class="home">
@@ -62,7 +62,7 @@ import axios from '@/config/api';
 export default {
   name: 'Home',
   props: {
-    // type: ,
+    loggedIn: Boolean //<-- this is new line
   },
   components: {
   },
@@ -83,6 +83,7 @@ export default {
     .then(response => {
       console.log(response.data);
       localStorage.setItem('token', response.data.token);
+      this.$emit('login'); // <-- this is the new line
       this.$router.replace({ name: 'courses_index'});
       // this.$router.replace({ name: 'dashboard'});
     })

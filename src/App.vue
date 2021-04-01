@@ -1,13 +1,13 @@
 <!--
 @Date:   2021-02-21T12:50:35+00:00
-@Last modified time: 2021-02-24T11:26:31+00:00
+@Last modified time: 2021-04-01T16:53:52+01:00
 -->
 
 
 <template>
   <div>
-      <MyNavBar></MyNavBar>
-    <router-view />
+      <MyNavBar :loggedIn="this.loggedIn" v-on:login="setLoggedIn" v-on:logout="setLoggedOut" ></MyNavBar>
+    <router-view  :loggedIn="this.loggedIn" v-on:login="setLoggedIn" v-on:logout="setLoggedOut"/>
 
 </div>
 </template>
@@ -19,8 +19,33 @@ export default {
   name: 'App',
   components: {
    MyNavBar
+ },
+  data() {
+    return {
+      loggedIn: false
+    }
+  },
+  created() {
+    if (localStorage.getItem('token')) {
+      this.loggedIn = true;
+      console.log("APP: ",this.loggedIn);
+    }
+    else {
+      this.loggedIn = false;
+    }
+  },
+  methods: {
+  setLoggedIn() {
+    this.loggedIn = true;
+          // optionally, you could store the token in localStorage here
+  },
+  setLoggedOut() {
+    this.loggedIn = false;
+          // optionally, you could trigger the whole logout process here
   }
 }
+}
+
 </script>
 
 <style>

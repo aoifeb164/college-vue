@@ -1,34 +1,34 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-03-30T18:59:41+01:00
+@Last modified time: 2021-04-01T17:38:32+01:00
 -->
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-03-30T18:59:41+01:00
+@Last modified time: 2021-04-01T17:38:32+01:00
 -->
 <template>
-  <div class="container text-center">
+  <div class="container">
     <h4 class="heading">Edit Enrolment:</h4>
 <b-form class="form">
     <b-form-group class="textbox" id="input-group-1" label="Date:" label-for="input-1">
-    <b-form-input id="input-1" v-model="form.date" type="date" placeholder="Enter enrolment name" required ></b-form-input>
+    <b-form-input id="input-1" v-model="form.date" type="date" placeholder="Enter enrolment date" required ></b-form-input>
     </b-form-group>
     <b-form-group class="textbox" id="input-group-1" label="Time:" label-for="input-1">
-    <b-form-input id="input-1" v-model="form.time" type="time" placeholder="Enter address" required ></b-form-input>
+    <b-form-input id="input-1" v-model="form.time" type="time" placeholder="Enter time" required ></b-form-input>
     </b-form-group>
     <b-form-group class="textbox" id="input-group-1" label="Status:" label-for="input-1">
-    <b-form-input id="input-1" v-model="form.status" type="text" placeholder="Enter email" required ></b-form-input>
+    <b-form-input id="input-1" v-model="form.status" type="text" placeholder="Enter status" required ></b-form-input>
     </b-form-group>
     <b-form-group class="textbox" id="input-group-1" label="Course:" label-for="input-1">
-    <b-form-input id="input-1" v-model="form.course_id" type="text" placeholder="Enter phone" required ></b-form-input>
+    <b-form-input id="input-1" v-model="form.course_id" type="text" placeholder="Enter course id" required ></b-form-input>
     </b-form-group>
     <b-form-group class="textbox" id="input-group-1" label="Lecturer:" label-for="input-1">
-    <b-form-input id="input-1" v-model="form.lecturer_id" type="text" placeholder="Enter phone" required ></b-form-input>
+    <b-form-input id="input-1" v-model="form.lecturer_id" type="text" placeholder="Enter lecturer id" required ></b-form-input>
     </b-form-group>
 </b-form>
-
+<div class="text-center">
     <b-button class="view" variant="outline-dark" @click="editEnrolment()">Submit</b-button>
-
+</div>
   </div>
 </template>
 
@@ -108,7 +108,7 @@ this.getEnrolment();
 .heading{
   padding-top: 50px;
   padding-bottom: 20px;
-  text-align: center;
+
 }
 .form{
   margin-left: 300px;
