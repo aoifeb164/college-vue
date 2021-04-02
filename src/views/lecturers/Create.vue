@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-01T17:28:11+01:00
+@Last modified time: 2021-04-02T17:22:28+01:00
 -->
 <template>
   <div class="container">
@@ -20,7 +20,7 @@
     </b-form-group>
 </b-form>
 <div class="text-center">
-    <b-button class="view" variant="outline-dark" @click="createLecturer()">Submit</b-button>
+    <b-button variant="outline-dark" @click="createLecturer()">Submit</b-button>
 </div>
   </div>
 </template>
@@ -52,10 +52,10 @@ export default {
 
 
       axios.post('/lecturers', {
-        Name: this.form.name,
-        Address: this.form.address,
-        Phone: this.form.phone,
-        Email: this.form.email,
+        name: this.form.name,
+        address: this.form.address,
+        phone: this.form.phone,
+        email: this.form.email,
       },
       {
         headers: { Authorization: "Bearer " + token}

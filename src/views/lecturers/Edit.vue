@@ -1,10 +1,10 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-01T17:36:56+01:00
+@Last modified time: 2021-04-02T18:12:37+01:00
 -->
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-01T17:36:56+01:00
+@Last modified time: 2021-04-02T18:12:37+01:00
 -->
 <template>
   <div class="container">
@@ -75,10 +75,10 @@ this.getLecturer();
 
 
       axios.put(`/lecturers/${this.$route.params.id}`, {
-        Name: this.form.name,
-        Address: this.form.address,
-        Email: this.form.email,
-        Phone: this.form.phone,
+        name: this.form.name,
+        address: this.form.address,
+        email: this.form.email,
+        phone: this.form.phone,
       },
       {
         headers: { Authorization: "Bearer " + token}

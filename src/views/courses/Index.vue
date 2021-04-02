@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-04-01T22:03:01+01:00
+@Last modified time: 2021-04-02T16:55:32+01:00
 -->
 
 <template>
@@ -8,7 +8,7 @@
     <div class="text-center">
       <b-row>
         <h3 class="view">Courses</h3>
-        <b-button class="view" variant="outline" v-b-toggle.sidebar-1>
+        <b-button class="view" variant="outline">
           <router-link :to="{ name: 'courses_create'}">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
