@@ -1,11 +1,14 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-02T18:12:37+01:00
+@Last modified time: 2021-04-06T20:22:46+01:00
 -->
-<!--
-@Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-02T18:12:37+01:00
--->
+
+<!-- Lecturer edit form
+edit Name
+edit address
+edit Email
+edit phone no. -->
+
 <template>
   <div class="container">
     <h4 class="heading">Edit Lecturer:</h4>
@@ -23,12 +26,16 @@
     <b-form-input id="input-1" v-model="form.phone" type="text" placeholder="Enter phone" required ></b-form-input>
     </b-form-group>
 </b-form>
+
+<!-- submit button to edit lecturer
+calls editLecturer method -->
 <div class="text-center">
     <b-button class="view" variant="outline-dark" @click="editLecturer()">Submit</b-button>
 </div>
   </div>
 </template>
 
+<!-- importing axios library -->
 <script>
 import axios from '@/config/api';
 
@@ -51,10 +58,12 @@ export default {
 this.getLecturer();
   },
   methods: {
+    //getting the information of the lecturer we want to edit
     getLecturer(){
        let token = localStorage.getItem('token');
       //  console.log(token);
 
+      //getting the lecturer from the list of lecturers with the lecturer id and displaying the info
        axios.get(`/lecturers/${this.$route.params.id}`, {
          headers: {Authorization: "Bearer " + token}
        })
@@ -70,6 +79,8 @@ this.getLecturer();
          console.log(error.response.data)
        })
      },
+
+     //editing and updating the enrolmet with information inputed in the form
     editLecturer() {
       let token = localStorage.getItem('token');
 
@@ -83,6 +94,7 @@ this.getLecturer();
       {
         headers: { Authorization: "Bearer " + token}
       })
+      //redirecting back to the index
       .then(response => {
         console.log(response.data);
         this.$router.push({ name: 'lecturers_index' });
@@ -98,8 +110,9 @@ this.getLecturer();
   },
 }
 </script>
-<style>
 
+<!-- style elements -->
+<style>
 .heading{
   padding-top: 50px;
   padding-bottom: 20px;

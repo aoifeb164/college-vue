@@ -1,7 +1,13 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-02T17:22:28+01:00
+@Last modified time: 2021-04-06T20:13:00+01:00
 -->
+
+<!-- lecturer create form
+enter Name
+enter address
+enter phone number
+enter email -->
 <template>
   <div class="container">
     <h4 class="heading">Create Lecturer:</h4>
@@ -19,12 +25,15 @@
     <b-form-input id="input-1" v-model="form.email" type="text" placeholder="Enter email address" required ></b-form-input>
     </b-form-group>
 </b-form>
+
+<!-- submit button calling the createLecturer method -->
 <div class="text-center">
     <b-button variant="outline-dark" @click="createLecturer()">Submit</b-button>
 </div>
   </div>
 </template>
 
+<!-- importing axios library -->
 <script>
 import axios from '@/config/api';
 
@@ -47,10 +56,11 @@ export default {
 
   },
   methods: {
+
+    //called when wanting to create a new library
     createLecturer() {
       let token = localStorage.getItem('token');
-
-
+      //created new lecturer in lecturer withthe information entered in the form using post request
       axios.post('/lecturers', {
         name: this.form.name,
         address: this.form.address,
@@ -60,6 +70,7 @@ export default {
       {
         headers: { Authorization: "Bearer " + token}
       })
+      //redirect back to enrolments index
       .then(response => {
         console.log(response.data);
         this.$router.push({ name: 'lecturers_index' });
@@ -75,8 +86,9 @@ export default {
   },
 }
 </script>
-<style>
 
+<!-- style elements -->
+<style>
 .heading{
   padding-top: 50px;
   padding-bottom: 20px;

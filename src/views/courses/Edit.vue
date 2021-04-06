@@ -1,11 +1,15 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-01T17:36:33+01:00
+@Last modified time: 2021-04-06T19:38:51+01:00
 -->
-<!--
-@Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-01T17:36:33+01:00
--->
+
+<!-- Course edit form
+edit title
+edit code
+edit description
+edit points
+select level -->
+
 <template>
   <div class="container">
     <h4 class="heading">Edit Course:</h4>
@@ -26,12 +30,16 @@
     <b-form-input id="input-1" v-model="form.level" type="text" placeholder="Enter level" required ></b-form-input>
     </b-form-group>
 </b-form>
+
+<!-- submit button to edit course
+calls editCourse method -->
 <div class="text-center">
     <b-button class="view" variant="outline-dark" @click="editCourse()">Submit</b-button>
 </div>
   </div>
 </template>
 
+<!-- importing axios library -->
 <script>
 import axios from '@/config/api';
 
@@ -55,10 +63,13 @@ export default {
 this.getCourse();
   },
   methods: {
+
+    //getting the information of the course we want to edit
     getCourse(){
        let token = localStorage.getItem('token');
       //  console.log(token);
 
+      //getting course info from the list of courses with the course id and displaying the info
        axios.get(`/courses/${this.$route.params.id}`, {
          headers: {Authorization: "Bearer " + token}
        })
@@ -75,6 +86,8 @@ this.getCourse();
          console.log(error.response.data)
        })
      },
+
+     //editing and updating the course with the information inputed in the form
     editCourse() {
       let token = localStorage.getItem('token');
 
@@ -89,6 +102,8 @@ this.getCourse();
       {
         headers: { Authorization: "Bearer " + token}
       })
+
+      //redirecting back to the index
       .then(response => {
         console.log(response.data);
         this.$router.push({ name: 'courses_index' });
@@ -104,6 +119,8 @@ this.getCourse();
   },
 }
 </script>
+
+<!-- style elements -->
 <style>
 .heading{
   padding-top: 50px;

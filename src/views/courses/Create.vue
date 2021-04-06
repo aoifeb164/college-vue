@@ -1,7 +1,14 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-01T17:04:26+01:00
+@Last modified time: 2021-04-06T20:13:02+01:00
 -->
+<!--
+course create form
+enter title
+eneter course code
+enter description of course
+enter points
+select level -->
 <template>
   <div class="container">
     <h4 class="heading">Create Course:</h4>
@@ -22,12 +29,15 @@
     <b-form-input id="input-1" v-model="form.level" type="text" placeholder="Enter level" required ></b-form-input>
     </b-form-group>
 </b-form>
+
+<!-- submit button calling the createCourse method -->
 <div class="text-center">
     <b-button variant="outline-dark" @click="createCourse()">Submit</b-button>
 </div>
   </div>
 </template>
 
+<!-- importing axios library -->
 <script>
 import axios from '@/config/api';
 
@@ -35,6 +45,7 @@ export default {
   name: 'CoursesCreate',
   components: {
   },
+
   data() {
     return {
       form: {
@@ -48,13 +59,12 @@ export default {
     }
   },
   mounted(){
-
   },
   methods: {
+    //called when wanting to create a new course
     createCourse() {
       let token = localStorage.getItem('token');
-
-
+      // created new course in courses with the information entered in the form using a post request
       axios.post('/courses', {
         title: this.form.title,
         code: this.form.code,
@@ -65,6 +75,8 @@ export default {
       {
         headers: { Authorization: "Bearer " + token}
       })
+
+      //redirect back to courses index
       .then(response => {
         console.log(response.data);
         this.$router.push({ name: 'courses_index' });
@@ -80,12 +92,12 @@ export default {
   },
 }
 </script>
-<style>
 
+<!-- style elements -->
+<style>
 .heading{
   padding-top: 50px;
   padding-bottom: 20px;
   padding-left: 300px;
 }
-
 </style>

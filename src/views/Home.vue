@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-04-01T21:49:38+01:00
+@Last modified time: 2021-04-06T20:33:19+01:00
 -->
 <template>
  <div class="container">
@@ -106,8 +106,9 @@ export default {
   },
 }
 </script>
-<style>
 
+<!-- style elements -->
+<style>
 .textbox{
 width: 580px;
 }

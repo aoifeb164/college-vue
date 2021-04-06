@@ -1,16 +1,18 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-03-31T19:19:18+01:00
+@Last modified time: 2021-04-06T20:09:15+01:00
 -->
+
+<!-- enrolment show page
+displaying the info related to the chosen enrolment -->
 <template>
   <div class="container">
-
-
   <h2 class="title">Date: </h2> {{ enrolment.date }} <br>
   <h4>Time: </h4> {{ enrolment.time }}<br>
   <h4>Status: </h4> {{ enrolment.status }}<br>
   <h4>Course: </h4> {{ enrolment.course_id }}<br>
   <h4>Lecturer: </h4> {{ enrolment.lecturer_id }}<br>
+
 
   <b-table striped hover :items="enrolment.enrolments" :fields="fields">
     <template #cell(title)="data">
@@ -21,6 +23,7 @@
   </div>
 </template>
 
+<!-- importing axios library -->
 <script>
 import axios from '@/config/api';
 
@@ -54,6 +57,7 @@ export default {
   mounted(){
     let token = localStorage.getItem('token');
 
+    // getting the enrolment from the the enrolments index with the enrolment id
     axios.get(`/enrolments/${this.$route.params.id}`, {
       headers: { Authorization: "Bearer " + token}
     })
@@ -71,6 +75,8 @@ export default {
   },
 }
 </script>
+
+<!-- style elements -->
 <style>
 .home {
   text-align: center;

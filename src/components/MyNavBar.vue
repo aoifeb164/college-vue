@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-04-01T22:15:40+01:00
+@Last modified time: 2021-04-06T18:36:11+01:00
 -->
 <template>
   <div>
@@ -14,8 +14,10 @@
       </b-navbar-nav>
     </b-navbar> -->
     <div>
+
+<!-- navbar links -->
   <b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand href="#">CA2</b-navbar-brand>
+    <b-navbar-brand href="#">CA2 College api</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -46,8 +48,10 @@
   </div>
 </template>
 
+<!-- importing axios library -->
 <script>
 import axios from 'axios';
+
 export default {
   name: 'MyNavBar',
   props: {
@@ -63,7 +67,12 @@ export default {
       }
     }
   },
+
+
 methods:{
+  //called when logging out of account
+  //removes Authorization token from localStorage
+  //redirects to home page
   logout() {
     let token = localStorage.removeItem('token');
    axios.get('http://college.api:8000/api/logout', {
@@ -87,6 +96,8 @@ this.$router.push('/');
 }
 </script>
 
+
+<!-- style elememts -->
 <style>
 #nav {
   padding: 30px;
