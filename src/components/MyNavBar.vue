@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-04-07T15:21:16+01:00
+@Last modified time: 2021-04-07T17:45:33+01:00
 -->
 <template>
     <!-- <b-navbar type="dark" variant="dark">
@@ -44,8 +44,7 @@
     </b-collapse>
   </div>
   </b-navbar>
-</div>
-</div>
+
 </template>
 
 <!-- importing axios library -->

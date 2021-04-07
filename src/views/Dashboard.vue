@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-29T18:09:05+01:00
-@Last modified time: 2021-04-07T16:48:52+01:00
+@Last modified time: 2021-04-07T18:09:37+01:00
 -->
 <template>
 <div class="dashboard">
@@ -32,7 +32,7 @@
         </b-card-text>
       </b-card>
 
-      <b-card class="shadow p-3 mb-5 bg-white rounded" title="Lecturers" img-src="/images/people.jpg" img-alt="Image" img-top>
+      <b-card class="shadow p-3 mb-5 bg-white rounded" title="Lecturers" img-src="/images/people1.jpg" img-alt="Image" img-top>
         <b-card-text>
           This will direct you to the create lecturer form or the lecturers index.
           <br>
@@ -54,7 +54,7 @@
         </b-card-text>
       </b-card>
 
-      <b-card class="shadow p-3 mb-5 bg-white rounded" title="Enrolments" img-src="/images/book.jpg" img-alt="Image" img-top>
+      <b-card class="shadow p-3 mb-5 bg-white rounded enrol" title="Enrolments"  img-src="/images/book1.jpg" img-alt="Image" img-top>
         <b-card-text>
           This will direct you to the create enrolmet form or the enrolments index.
           <br>
@@ -124,4 +124,5 @@ export default {
 .welcome{
   margin-top: 40px;
 }
+
 </style>
