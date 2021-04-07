@@ -1,6 +1,6 @@
 /**
  * @Date:   2021-02-21T12:53:07+00:00
- * @Last modified time: 2021-03-30T18:38:26+01:00
+ * @Last modified time: 2021-04-07T12:10:16+01:00
  */
 
 import Vue from 'vue'
@@ -35,7 +35,7 @@ export default new Router({
       component:Home
     },
     {
-      path: '/',
+      path: '/dashboard',
       name: 'dashboard',
       component:Dashboard
     },

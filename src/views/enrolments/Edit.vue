@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-24T15:07:27+00:00
-@Last modified time: 2021-04-06T20:22:54+01:00
+@Last modified time: 2021-04-07T16:16:19+01:00
 -->
 
 <!-- Enrolment edit form
@@ -41,7 +41,7 @@ select lecturer from dropdown -->
 <!-- submit button to edit enrolment
 calls editEnrolment method -->
 <div class="text-center">
-    <b-button class="view" variant="outline-dark" @click="editEnrolment()">Submit</b-button>
+    <b-button variant="outline-dark" @click="editEnrolment()">Submit</b-button>
 </div>
   </div>
 </template>
@@ -178,7 +178,5 @@ this.getLecturers();
   padding-bottom: 20px;
 
 }
-.form{
-  margin-left: 300px;
-}
+
 </style>

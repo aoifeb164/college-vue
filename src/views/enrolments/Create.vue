@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-06T17:58:26+01:00
+@Last modified time: 2021-04-07T16:15:45+01:00
 -->
 <template>
   <div class="container">
@@ -15,11 +15,13 @@
     <!-- <b-form-group class="textbox" id="input-group-1" label="Status:" label-for="input-1" align="left">
     <b-form-input id="input-1" v-model="form.status" type="text" placeholder="Enter status" required ></b-form-input>
     </b-form-group> -->
-    <b-form-group class="textbox" label="Status" align="left">
-      <b-form-radio v-model="form.status" value="career_break">career_break</b-form-radio>
-          <b-form-radio v-model="form.status" value="assigned">assigned</b-form-radio>
-          <b-form-radio v-model="form.status" value="interested">interested</b-form-radio>
-          <b-form-radio v-model="form.status" value="associate">associate</b-form-radio>
+    <b-form-group label="Status">
+        <b-row class="level">
+      <b-form-radio v-model="form.status" value="career_break" class="radio">career_break</b-form-radio>
+          <b-form-radio v-model="form.status" value="assigned" class="radio">assigned</b-form-radio>
+          <b-form-radio v-model="form.status" value="interested" class="radio">interested</b-form-radio>
+          <b-form-radio v-model="form.status" value="associate" class="radio">associate</b-form-radio>
+</b-row>
       </b-form-group>
     <!-- <b-form-group class="textbox" id="input-group-1" label="Course:" label-for="input-1" align="left">
     <b-form-input id="input-1" v-model="form.course_id" type="text" placeholder="Enter course id" required ></b-form-input>
@@ -42,7 +44,7 @@
     </b-form-group> -->
 </b-form>
 <div class="text-center">
-    <b-button class="view" variant="outline-dark" @click="createEnrolment()">Submit</b-button>
+    <b-button variant="outline-dark" @click="createEnrolment()">Submit</b-button>
 </div>
   </div>
 </template>
@@ -148,7 +150,5 @@ export default {
   padding-top: 50px;
   padding-bottom: 20px;
 }
-.form{
 
-}
 </style>

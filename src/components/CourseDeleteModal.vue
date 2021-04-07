@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-06T18:29:19+01:00
+@Last modified time: 2021-04-07T16:00:17+01:00
 -->
 
 <!-- course CourseDeleteModal -->
@@ -8,7 +8,7 @@
   <div class="course-delete-modal">
     <b-modal id ="courseDeleteModal" ref="courseDeleteModal" title="Delete course" class="modal-title">
       <b-row>
-        <h5 class="text">Do you still want to delete this course?</h5>
+        <h5 align="center">Are you sure you want to delete this course?</h5>
       </b-row>
 
 <!-- submit button that calls deleteCourse method -->
@@ -73,9 +73,6 @@ export default {
   <style>
   .modal-title{
     margin-left: 160px;
-  }
-  .text{
-    margin-left: 60px;
   }
   .button{
     margin-left:200px;

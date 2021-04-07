@@ -1,18 +1,27 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-04-06T20:32:50+01:00
+@Last modified time: 2021-04-07T15:14:05+01:00
 -->
 
 <!-- lecturer show page
 displaying the info related to the chosen lecturer -->
 <template>
   <div class="container">
+    <b-card class="show-card">
+    <b-row>
+      <b-col sm="4">
+        <img src="/images/user.png" width="300px" height="300px" class="image">
+      </b-col>
+        <b-col>
   <h2 class="title">{{ lecturer.name }}</h2>
   <h5>Address: </h5> {{ lecturer.address }}<br>
   <h5>Email: </h5> {{ lecturer.email }}<br>
   <h5>Phone: </h5> {{ lecturer.phone }}<br>
-
-table displaying teh enrolemts related tot eh lecturer
+</b-col>
+</b-row>
+</b-card>
+<!--table displaying teh enrolemts related tot eh lecturer -->
+<h4>Enrolments</h4>
   <b-table hover :items="lecturer.enrolments" :fields="fields" class="table">
     <template #cell(title)="data">
       <router-link :to="{ name: 'lecturers_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>
@@ -85,5 +94,13 @@ export default {
 }
 .table{
   margin-top: 20px;
+}
+.image{
+  margin-top: 25px;
+}
+.show-card{
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 </style>

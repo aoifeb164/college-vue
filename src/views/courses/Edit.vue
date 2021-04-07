@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-06T19:38:51+01:00
+@Last modified time: 2021-04-07T16:45:54+01:00
 -->
 
 <!-- Course edit form
@@ -34,7 +34,7 @@ select level -->
 <!-- submit button to edit course
 calls editCourse method -->
 <div class="text-center">
-    <b-button class="view" variant="outline-dark" @click="editCourse()">Submit</b-button>
+    <b-button variant="outline-dark" @click="editCourse()">Submit</b-button>
 </div>
   </div>
 </template>
@@ -127,6 +127,6 @@ this.getCourse();
   padding-bottom: 20px;
 }
 .form{
-margin-left: 300px;
+margin-left: 260px;
 }
 </style>

@@ -1,9 +1,8 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-04-06T18:36:11+01:00
+@Last modified time: 2021-04-07T15:21:16+01:00
 -->
 <template>
-  <div>
     <!-- <b-navbar type="dark" variant="dark">
       <b-navbar-nav style="width: 100%">
         <b-nav-item to="/">Home</b-nav-item>
@@ -13,17 +12,17 @@
         <b-nav-item class="logout" @click="logout()"> Logout</b-nav-item>
       </b-navbar-nav>
     </b-navbar> -->
-    <div>
 
 <!-- navbar links -->
   <b-navbar toggleable="lg" type="dark" variant="dark">
+      <div class="container">
     <b-navbar-brand href="#">CA2 College api</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav>
-        <b-nav-item to="/">Home</b-nav-item>
+      <b-navbar-nav >
+        <!-- <b-nav-item to="/">Home</b-nav-item> -->
         <b-nav-item to="/dashboard">Dashboard</b-nav-item>
         <b-nav-item to="/courses">Courses</b-nav-item>
         <b-nav-item to="/lecturers">Lecturers</b-nav-item>
@@ -43,9 +42,10 @@
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
+  </div>
   </b-navbar>
 </div>
-  </div>
+</div>
 </template>
 
 <!-- importing axios library -->
@@ -113,9 +113,9 @@ this.$router.push('/');
   color: #42b983;
 }
 
-/* .navbar.navbar-dark.bg-dark{
-    background-color: #AABB55!important;
- } */
+.navbar.navbar-dark.bg-dark{
+    background-color: #292f33 !important;
+ }
 
  .logout{
    float: right!important;

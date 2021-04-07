@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-04-06T20:33:19+01:00
+@Last modified time: 2021-04-07T12:08:23+01:00
 -->
 <template>
  <div class="container">
@@ -79,8 +79,8 @@ export default {
       console.log(response.data);
       localStorage.setItem('token', response.data.token);
       this.$emit('login'); // <-- this is the new line
-      this.$router.replace({ name: 'courses_index'});
-      // this.$router.replace({ name: 'dashboard'});
+      // this.$router.replace({ name: 'courses_index'});
+      this.$router.replace({ name: 'dashboard'});
     })
     .catch(error => {
       console.log(error)

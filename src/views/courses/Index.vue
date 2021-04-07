@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-04-06T20:30:54+01:00
+@Last modified time: 2021-04-07T15:54:36+01:00
 -->
 
 <!-- courses index -->
@@ -66,6 +66,8 @@
       <!-- table pagination - allowing 8 rows to be displayed at a time -->
       <b-pagination
        v-model="currentPage"
+       pills
+       color="black"
        :total-rows="rows"
        :per-page="perPage"
        aria-controls="my-table"

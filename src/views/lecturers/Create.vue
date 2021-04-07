@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-06T20:13:00+01:00
+@Last modified time: 2021-04-07T16:08:01+01:00
 -->
 
 <!-- lecturer create form
@@ -93,7 +93,5 @@ export default {
   padding-top: 50px;
   padding-bottom: 20px;
 }
-.form{
 
-}
 </style>
