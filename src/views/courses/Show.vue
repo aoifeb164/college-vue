@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-04-06T20:09:18+01:00
+@Last modified time: 2021-04-13T10:42:29+01:00
 -->
 <!-- course show page
 displaying the info related to the chosen course -->
@@ -13,6 +13,7 @@ displaying the info related to the chosen course -->
   <h5>Level: </h5> {{ course.level }}<br>
 
 <!-- table displaying the enrolemts related to the course -->
+<h4>Enrolments</h4>
   <b-table hover :items="course.enrolments" :fields="fields">
     <template #cell(title)="data">
       <router-link :to="{ name: 'courses_show', params: { id: data.item.id }}">{{ data.item.title }}</router-link>

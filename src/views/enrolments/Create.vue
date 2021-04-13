@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-07T16:15:45+01:00
+@Last modified time: 2021-04-13T10:31:39+01:00
 -->
 <template>
   <div class="container">
@@ -43,8 +43,12 @@
     <b-form-input id="input-1" v-model="form.enrolments" type="text" placeholder="Enter level" required ></b-form-input>
     </b-form-group> -->
 </b-form>
-<div class="text-center">
-    <b-button variant="outline-dark" @click="createEnrolment()">Submit</b-button>
+<div class=" text-center arrow">
+  <b-button variant="outline">
+    <b-icon variant="outline-dark" @click="createEnrolment()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#292f33" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+</svg></b-icon>
+</b-button>
 </div>
   </div>
 </template>

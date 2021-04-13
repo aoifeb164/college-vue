@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-06T18:33:13+01:00
+@Last modified time: 2021-04-13T11:12:15+01:00
 -->
 
 <!-- course EnrolmentDeleteModal -->
@@ -11,11 +11,10 @@
         <h5 class="text">Do you still want to delete this lecturer?</h5>
       </b-row>
 
-      <b-row class="justify-content-center">
-        <b-button class="delete-modal-button" @click="hide();" variant="light"> cancel</b-button>
-
+          <b-row align="center">
+              <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
 <!-- submit button that calls deleteEnrolment method -->
-        <b-button class="cancel-modal-button" @click="deleteLecturer(); hide();" variant="danger"> delete</b-button>
+        <b-button @click="deleteLecturer(); hide();" variant="danger" class="button"> Delete</b-button>
       </b-row>
 
     </b-modal>
@@ -46,7 +45,7 @@ export default {
       this.$refs.lecturerDeleteModal.show();
     },
     hide(){
-      this.$refs.lecturerDeleteModal.hide();
+      this.$refs.enrolmentDeleteModal.hide();
     },
     //called when wanting to delete lecturer
     deleteLecturer(){
@@ -74,13 +73,5 @@ export default {
 
 <!-- style elements -->
   <style>
-  .modal-title{
-    margin-left: 160px;
-  }
-  .text{
-    margin-left: 60px;
-  }
-  .button{
-    margin-left:200px;
-  }
+
   </style>

@@ -1,19 +1,20 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-07T16:00:17+01:00
+@Last modified time: 2021-04-13T11:13:05+01:00
 -->
 
 <!-- course CourseDeleteModal -->
 <template>
-  <div class="course-delete-modal">
-    <b-modal id ="courseDeleteModal" ref="courseDeleteModal" title="Delete course" class="modal-title">
+  <div>
+    <b-modal id ="courseDeleteModal" ref="courseDeleteModal" title="Delete Course" class="modal-title">
       <b-row>
-        <h5 align="center">Are you sure you want to delete this course?</h5>
+        <h5 class="text">Are you sure you want to delete this course?</h5>
       </b-row>
 
 <!-- submit button that calls deleteCourse method -->
       <b-row align="center">
-      <b-button @click="deleteCourse()" variant="danger" class="button">Delete</b-button>
+          <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
+      <b-button @click="deleteCourse();  hide();" variant="danger" class="button">Delete</b-button>
       </b-row>
 
     </b-modal>
@@ -44,6 +45,9 @@ export default {
     show(){
       this.$refs.courseDeleteModal.show();
     },
+    hide(){
+      this.$refs.enrolmentDeleteModal.hide();
+    },
 
     //called when wanting to delete course
     deleteCourse(){
@@ -72,9 +76,12 @@ export default {
 <!-- style elements -->
   <style>
   .modal-title{
-    margin-left: 160px;
+    margin-left: 170px;
+  }
+  .text{
+    margin-left: 45px;
   }
   .button{
-    margin-left:200px;
+    margin-left:180px;
   }
   </style>

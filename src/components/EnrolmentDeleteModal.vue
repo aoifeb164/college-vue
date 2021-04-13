@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-07T11:44:15+01:00
+@Last modified time: 2021-04-13T11:13:45+01:00
 -->
 
 <!-- enrolment EnrolementDeleteModal -->
@@ -11,11 +11,11 @@
         <h5 class="text">Do you still want to delete this enrolment?</h5>
       </b-row>
 
-      <b-row class="justify-content-center">
-        <b-button class="delete-modal-button" @click="hide();" variant="light"> cancel</b-button>
+      <b-row align="center">
+        <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
 
 <!-- submit button that calls deleteEnrolment method -->
-        <b-button class="cancel-modal-button" @click="deleteEnrolment(); hide();" variant="danger"> delete</b-button>
+        <b-button @click="deleteEnrolment(); hide();" variant="danger" class="button"> delete</b-button>
       </b-row>
 
     </b-modal>
@@ -75,13 +75,4 @@ export default {
 
 <!-- style elements -->
   <style>
-  .modal-title{
-    margin-left: 160px;
-  }
-  .text{
-    margin-left: 60px;
-  }
-  .button{
-    margin-left:200px;
-  }
   </style>

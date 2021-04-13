@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-24T15:07:27+00:00
-@Last modified time: 2021-04-07T16:16:19+01:00
+@Last modified time: 2021-04-13T10:34:44+01:00
 -->
 
 <!-- Enrolment edit form
@@ -21,10 +21,12 @@ select lecturer from dropdown -->
     <b-form-input id="input-1" v-model="form.time" type="time" placeholder="Enter time" required ></b-form-input>
     </b-form-group>
     <b-form-group class="textbox" id="input-group-1" label="Status:" align="left" label-for="input-1">
-      <b-form-radio v-model="form.status" value="career_break">career_break</b-form-radio>
-          <b-form-radio v-model="form.status" value="assigned">assigned</b-form-radio>
-          <b-form-radio v-model="form.status" value="interested">interested</b-form-radio>
-          <b-form-radio v-model="form.status" value="associate">associate</b-form-radio>
+<b-row class="level">
+      <b-form-radio v-model="form.status" value="career_break" class="radio">career_break</b-form-radio>
+          <b-form-radio v-model="form.status" value="assigned" class="radio">assigned</b-form-radio>
+          <b-form-radio v-model="form.status" value="interested" class="radio">interested</b-form-radio>
+          <b-form-radio v-model="form.status" value="associate" class="radio">associate</b-form-radio>
+</b-row>
       </b-form-group>
     <b-form-group class="textbox" id="input-group-1" label="Course:" label-for="input-1" align="left" placeholder="course">
     <b-form-select id="input-1" v-model="form.course_id">
@@ -40,8 +42,12 @@ select lecturer from dropdown -->
 
 <!-- submit button to edit enrolment
 calls editEnrolment method -->
-<div class="text-center">
-    <b-button variant="outline-dark" @click="editEnrolment()">Submit</b-button>
+<div class=" text-center arrow">
+  <b-button variant="outline">
+    <b-icon variant="outline-dark" @click="editEnrolment()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#292f33" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+</svg></b-icon>
+</b-button>
 </div>
   </div>
 </template>

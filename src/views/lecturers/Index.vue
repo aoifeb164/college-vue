@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-04-06T20:30:44+01:00
+@Last modified time: 2021-04-13T10:46:49+01:00
 -->
 
 <!-- lecturers index -->
@@ -11,11 +11,13 @@
       <h3 class="view">Lecturers</h3>
       <!-- button directing to lecturers create form -->
       <b-button class="view" variant="outline">
-        <router-link :to="{ name: 'lecturers_create'}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+        <router-link :to="{ name: 'lecturers_create'}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 </svg></router-link>
       </b-button>
+      <LecturerDeleteModal ref="LecturerDeleteModal" :lecturerId="selectedLecturer" />
   </b-row>
 </div>
 
@@ -41,17 +43,20 @@
         </svg></router-link>
 
 <!-- creating a delete lecturer course button that calls the LecturerDeleteModal in teh components folder -->
-      <b-icon @click="showDeleteModal(data.item.id)"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
+  <b-button variant="outline">
+      <b-icon class="modalButton" @click="showDeleteModal(data.item.id)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
         </svg></b-icon>
-
-      <LecturerDeleteModal ref="LecturerDeleteModal" :lecturerId="selectedLecturer" />
+</b-button>
 </template>
 </b-table>
 <!-- table pagination - allowing 8 rows to be displayed at a time -->
 <b-pagination
  v-model="currentPage"
+ pills
+ color="black"
  :total-rows="rows"
  :per-page="perPage"
  aria-controls="my-table"
@@ -69,7 +74,7 @@ import LecturerDeleteModal from '@/components/LecturerDeleteModal.vue'
 export default {
   name: 'lecturerIndex',
   components: {
-    LecturerDeleteModal
+    LecturerDeleteModal,
   },
   data(){
     return {
@@ -102,6 +107,7 @@ selectedLecturer:0,
    this.getLecturers();
   },
   methods: {
+
     //called when wanting to display the LecturerDeleteModal
     showDeleteModal(lecturerId) {
       this.selectedLecturer = lecturerId
