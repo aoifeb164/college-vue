@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-04-13T10:45:48+01:00
+@Last modified time: 2021-04-14T15:04:04+01:00
 -->
 
 <!-- courses index -->
@@ -90,7 +90,7 @@ export default {
   },
   data() {
     return {
-      perPage: 8,
+      perPage: 7,
       currentPage: 1,
       isBusy: false,
       fields: [{
@@ -189,9 +189,6 @@ export default {
 <style>
 .home {
   text-align: center;
-}
-.title {
-  padding-top: 50px;
 }
 .view {
 margin-left: 25px;

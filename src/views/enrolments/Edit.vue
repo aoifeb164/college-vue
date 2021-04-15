@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-24T15:07:27+00:00
-@Last modified time: 2021-04-13T10:34:44+01:00
+@Last modified time: 2021-04-14T15:42:10+01:00
 -->
 
 <!-- Enrolment edit form
@@ -178,11 +178,5 @@ this.getLecturers();
 
 <!-- style elements -->
 <style>
-
-.heading{
-  padding-top: 50px;
-  padding-bottom: 20px;
-
-}
 
 </style>

@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-04-13T10:46:36+01:00
+@Last modified time: 2021-04-14T15:06:40+01:00
 -->
 
 <!-- enrolemts index -->
@@ -157,10 +157,6 @@ selectedEnrolment:0,
 .home {
   text-align: center;
 }
-.title{
-  padding-top: 50px;
-}
-
 .view {
    /* margin-bottom: 50px!important; */
 }

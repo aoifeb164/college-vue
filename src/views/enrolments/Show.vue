@@ -1,25 +1,19 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-04-06T20:09:15+01:00
+@Last modified time: 2021-04-14T15:17:35+01:00
 -->
 
 <!-- enrolment show page
 displaying the info related to the chosen enrolment -->
 <template>
   <div class="container">
+        <b-card class="shadow p-3 mb-5 bg-white rounded show-card">
   <h2 class="title">Date: </h2> {{ enrolment.date }} <br>
   <h4>Time: </h4> {{ enrolment.time }}<br>
   <h4>Status: </h4> {{ enrolment.status }}<br>
   <h4>Course: </h4> {{ enrolment.course_id }}<br>
   <h4>Lecturer: </h4> {{ enrolment.lecturer_id }}<br>
-
-
-  <b-table striped hover :items="enrolment.enrolments" :fields="fields">
-    <template #cell(title)="data">
-      <router-link :to="{ name: 'enrolments_show', params: { id: data.item.id }}">{{ data.item.id }}</router-link>
-    </template>
-  </b-table>
-
+</b-card>
   </div>
 </template>
 
@@ -82,7 +76,4 @@ export default {
   text-align: center;
 }
 
-.title{
-  padding-top: 50px;
-}
 </style>

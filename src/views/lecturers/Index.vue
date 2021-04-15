@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-04-13T10:46:49+01:00
+@Last modified time: 2021-04-14T15:12:26+01:00
 -->
 
 <!-- lecturers index -->
@@ -143,9 +143,6 @@ selectedLecturer:0,
 <style>
 .home {
   text-align: center;
-}
-.title{
-  padding-top: 50px;
 }
 
 </style>

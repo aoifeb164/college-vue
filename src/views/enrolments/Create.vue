@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-13T10:31:39+01:00
+@Last modified time: 2021-04-14T15:42:18+01:00
 -->
 <template>
   <div class="container">
@@ -149,10 +149,5 @@ export default {
 
 </script>
 <style>
-
-.heading{
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
 
 </style>

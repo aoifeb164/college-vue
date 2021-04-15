@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-13T10:31:02+01:00
+@Last modified time: 2021-04-14T15:52:54+01:00
 -->
 
 <!-- Course edit form
@@ -126,11 +126,8 @@ this.getCourse();
 
 <!-- style elements -->
 <style>
-.heading{
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
+
 .form{
-margin-left: 260px;
+margin-left: 250px;
 }
 </style>

@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-13T10:30:30+01:00
+@Last modified time: 2021-04-14T15:42:31+01:00
 -->
 
 <!-- Lecturer edit form
@@ -117,8 +117,5 @@ this.getLecturer();
 
 <!-- style elements -->
 <style>
-.heading{
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
+
 </style>
