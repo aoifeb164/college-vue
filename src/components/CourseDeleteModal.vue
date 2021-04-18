@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-13T11:13:05+01:00
+@Last modified time: 2021-04-18T17:22:49+01:00
 -->
 
 <!-- course CourseDeleteModal -->
@@ -68,6 +68,23 @@ export default {
         console.log(error)
         console.log(error.response.data)
       })
+//       let listOfDeleteRequests = this.course.enrolments.map((current, index) => axios.delete("/api/enrolments/" +
+//       current.id, {headers: { Authorization: "Bearer " + token }}
+//     ));
+// // log the contents of listOfDeleteRequests
+//       axios.all(listOfDeleteRequests)
+//       .then(function(response) {
+//           console.log(response.data);
+//         axios.delete(`/courses/${this.courseId}`, {
+//           headers: { Authorization: "Bearer " + token }
+//         })
+//         .then(function(response) {
+//           console.log(response.data);
+//         })
+//         .catch(function(error) {
+//           console.log(error);
+//         });
+//       });
     }
     },
   }

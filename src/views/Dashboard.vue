@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-29T18:09:05+01:00
-@Last modified time: 2021-04-07T18:09:37+01:00
+@Last modified time: 2021-04-18T17:43:39+01:00
 -->
 <template>
 <div class="dashboard">
@@ -83,7 +83,6 @@
 
 
 <script>
-// import axios from '@/config/api';
 export default {
   name: 'Dashboard',
   components: {
@@ -91,28 +90,8 @@ export default {
   data(){
 
   },
-  // mounted(){
-  //   this.courses();
-  // },
-  // methods: {
-  //   courses(){
-  //       let token = localStorage.getItem('token');
-  //   axios.get('/courses', {
-  //     headers: {
-  //       Authorization: "Bearer " + token
-  //     }
-  //   })
-  //   .then(response => {
-  //     console.log(response.data);
-  //     localStorage.setItem('token', response.data.token);
-  //     this.$router.replace({ name: 'courses_index'});
-  //   })
-  //   .catch(error => {
-  //     console.log(error)
-  //     console.log(error.response.data)
-  //   })
-  // },
-  // },
+  mounted(){
+  },
 }
 </script>
 

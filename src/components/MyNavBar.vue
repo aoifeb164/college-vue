@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-09T09:57:56+00:00
-@Last modified time: 2021-04-07T17:45:33+01:00
+@Last modified time: 2021-04-18T17:53:30+01:00
 -->
 <template>
     <!-- <b-navbar type="dark" variant="dark">
@@ -21,7 +21,7 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav >
+      <b-navbar-nav v-if="loggedIn">
         <!-- <b-nav-item to="/">Home</b-nav-item> -->
         <b-nav-item to="/dashboard">Dashboard</b-nav-item>
         <b-nav-item to="/courses">Courses</b-nav-item>
@@ -49,21 +49,22 @@
 
 <!-- importing axios library -->
 <script>
-import axios from 'axios';
 
+import axios from 'axios';
 export default {
   name: 'MyNavBar',
   props: {
   loggedIn: Boolean //<-- this is new line
 },
   components: {
+
   },
   data(){
     return {
-      form: {
-        email: "",
-        password: ""
-      }
+      // form: {
+      //   email: "",
+      //   password: ""
+      // }
     }
   },
 
@@ -81,16 +82,18 @@ methods:{
    .then(response => {
      console.log(response.data);
         console.log("Logged Out");
-          this.$router.replace({ name: 'home'});
+        this.$emit('logout');
+          this.$router.push({ name: 'home'});
    })
    .catch(error => {
      console.log(error)
      console.log(error.response.data)
    })
    localStorage.removeItem('token');
-   this.$emit('logout'); //<-- tells App.vue to update loggedIn
-this.$router.push('/');
+    //<-- tells App.vue to update loggedIn
+   this.$router.push('/');
  },
+
 }
 }
 </script>
