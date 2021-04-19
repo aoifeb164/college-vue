@@ -1,24 +1,24 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-18T17:22:49+01:00
+@Last modified time: 2021-04-19T20:47:50+01:00
 -->
 
-<!-- course CourseDeleteModal -->
+<!-- CourseDeleteModal -->
 <template>
-  <div>
-    <b-modal id ="courseDeleteModal" ref="courseDeleteModal" title="Delete Course" class="modal-title">
-      <b-row>
-        <h5 class="text">Are you sure you want to delete this course?</h5>
-      </b-row>
+<div>
+  <b-modal id="courseDeleteModal" ref="courseDeleteModal" title="Delete Course" class="modal-title">
+    <b-row>
+      <h5 class="text">Are you sure you want to delete this course?</h5>
+    </b-row>
 
-<!-- submit button that calls deleteCourse method -->
-      <b-row align="center">
-          <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
+    <!-- submit button that calls deleteCourse method and hide method-->
+    <b-row align="center">
+      <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
       <b-button @click="deleteCourse();  hide();" variant="danger" class="button">Delete</b-button>
-      </b-row>
+    </b-row>
 
-    </b-modal>
-  </div>
+  </b-modal>
+</div>
 </template>
 
 <!-- importing axios library -->
@@ -33,18 +33,18 @@ export default {
   },
   data(){
     return {
-
     }
   },
   mounted(){
-
   },
 
+
   methods: {
-    //called when wanting to display modal
+    //called on the delete button when wanting to display modal
     show(){
       this.$refs.courseDeleteModal.show();
     },
+    //hides the component after delete button is selected
     hide(){
       this.$refs.enrolmentDeleteModal.hide();
     },
@@ -68,23 +68,6 @@ export default {
         console.log(error)
         console.log(error.response.data)
       })
-//       let listOfDeleteRequests = this.course.enrolments.map((current, index) => axios.delete("/api/enrolments/" +
-//       current.id, {headers: { Authorization: "Bearer " + token }}
-//     ));
-// // log the contents of listOfDeleteRequests
-//       axios.all(listOfDeleteRequests)
-//       .then(function(response) {
-//           console.log(response.data);
-//         axios.delete(`/courses/${this.courseId}`, {
-//           headers: { Authorization: "Bearer " + token }
-//         })
-//         .then(function(response) {
-//           console.log(response.data);
-//         })
-//         .catch(function(error) {
-//           console.log(error);
-//         });
-//       });
     }
     },
   }

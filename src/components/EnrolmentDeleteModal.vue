@@ -1,25 +1,25 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-13T11:13:45+01:00
+@Last modified time: 2021-04-19T20:48:04+01:00
 -->
 
-<!-- enrolment EnrolementDeleteModal -->
+<!-- EnrolementDeleteModal -->
 <template>
-  <div class="enrolment-delete-modal">
-    <b-modal id ="enrolmentDeleteModal" ref="enrolmentDeleteModal" title="Delete enrolment" class="modal-title">
-      <b-row>
-        <h5 class="text">Do you still want to delete this enrolment?</h5>
-      </b-row>
+<div class="enrolment-delete-modal">
+  <b-modal id="enrolmentDeleteModal" ref="enrolmentDeleteModal" title="Delete enrolment" class="modal-title">
+    <b-row>
+      <h5 class="text">Do you still want to delete this enrolment?</h5>
+    </b-row>
 
-      <b-row align="center">
-        <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
+    <b-row align="center">
+      <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
 
-<!-- submit button that calls deleteEnrolment method -->
-        <b-button @click="deleteEnrolment(); hide();" variant="danger" class="button"> delete</b-button>
-      </b-row>
+      <!-- submit button that calls deleteEnrolment method and hide method-->
+      <b-button @click="deleteEnrolment(); hide();" variant="danger" class="button"> delete</b-button>
+    </b-row>
 
-    </b-modal>
-  </div>
+  </b-modal>
+</div>
 </template>
 
 <!-- importing axios library -->
@@ -41,10 +41,11 @@ export default {
 
   },
   methods: {
-    //called when wanting to display modal
+    //called on the delete button when wanting to display modal
     show(){
       this.$refs.enrolmentDeleteModal.show();
     },
+    //hides the component after delete button is selected
     hide(){
       this.$refs.enrolmentDeleteModal.hide();
     },

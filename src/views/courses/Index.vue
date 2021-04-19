@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T15:48:00+00:00
-@Last modified time: 2021-04-14T15:04:04+01:00
+@Last modified time: 2021-04-19T21:14:39+01:00
 -->
 
 <!-- courses index -->
@@ -54,7 +54,7 @@
               <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
             </svg></router-link>
 
-            <!-- creating a delete course bytton that calls the CourseDeleteModal in the components folder -->
+            <!-- creating a delete course button that calls the CourseDeleteModal in the components folder -->
             <b-button variant="outline">
           <b-icon class="modalButton" @click="showDeleteModal(data.item.id)">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
@@ -83,6 +83,7 @@ importing CourseDeleteModal from the components folder -->
 import axios from '@/config/api';
 import CourseDeleteModal from '@/components/CourseDeleteModal.vue'
 
+// creates local registration of component
 export default {
   name: 'CourseIndex',
   components: {
@@ -128,12 +129,12 @@ export default {
   },
 
   methods:{
-    //called when wanting to display the CourseDeleteModal
+    //called on delete button when wanting to display the CourseDeleteModal
     showDeleteModal(courseId) {
       this.selectedCourse = courseId
       this.$refs.CourseDeleteModal.show();
     },
-    //called when wanting to search the list of courses
+    //called on search button when wanting to search the list of courses
     searchCourse() {
       this.filteredCourses = this.courses.filter(course =>
         course.title.toLowerCase().includes(this.term.toLowerCase()));

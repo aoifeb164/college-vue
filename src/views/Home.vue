@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-04-18T17:51:10+01:00
+@Last modified time: 2021-04-19T21:15:45+01:00
 -->
 <template>
  <div class="container">
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-
+// importing the login component to display the forms on homepage
 import Login from '@/components/Login.vue'
 export default {
   name: 'Home',
