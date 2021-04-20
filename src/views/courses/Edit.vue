@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-20T12:03:27+01:00
+@Last modified time: 2021-04-20T16:56:25+01:00
 -->
 
 <!-- Course edit form
@@ -76,7 +76,6 @@ export default {
     getCourse() {
       let token = localStorage.getItem('token');
       //  console.log(token);
-
       //getting course info from the list of courses with the course id and displaying the info
       axios.get(`/courses/${this.$route.params.id}`, {
           headers: {

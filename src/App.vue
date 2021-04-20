@@ -1,8 +1,9 @@
 <!--
 @Date:   2021-02-21T12:50:35+00:00
-@Last modified time: 2021-04-20T13:31:52+01:00
+@Last modified time: 2021-04-20T17:11:04+01:00
 -->
 
+<!-- root of application -->
 
 <template>
 <div>
@@ -12,9 +13,11 @@
 </div>
 </template>
 
+<!-- importing navbar component to display -->
 <script>
 import MyNavBar from './components/MyNavBar.vue'
 
+// creates local registration of component
 export default {
   name: 'App',
   components: {
@@ -33,6 +36,8 @@ export default {
       this.loggedIn = false;
     }
   },
+
+// methods for the nav bar to display the links if the user is logged in or out
   methods: {
     setLoggedIn() {
       this.loggedIn = true;
