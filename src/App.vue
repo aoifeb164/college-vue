@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:50:35+00:00
-@Last modified time: 2021-04-20T17:11:04+01:00
+@Last modified time: 2021-04-20T17:23:30+01:00
 -->
 
 <!-- root of application -->
@@ -37,7 +37,7 @@ export default {
     }
   },
 
-// methods for the nav bar to display the links if the user is logged in or out
+  // methods for the nav bar to display the links if the user is logged in or out
   methods: {
     setLoggedIn() {
       this.loggedIn = true;

@@ -1,6 +1,6 @@
   <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-04-19T21:14:33+01:00
+@Last modified time: 2021-04-20T17:22:31+01:00
 -->
 <!-- course show page
 displaying the info related to the selected course -->

@@ -1,10 +1,10 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-04-20T13:31:48+01:00
+@Last modified time: 2021-04-20T17:23:35+01:00
 -->
 <template>
- <div class="container">
-<Login v-on:login="setloggedIn" />
+<div class="container">
+  <Login v-on:login="setloggedIn" />
 </div>
 </template>
 
@@ -19,9 +19,9 @@ export default {
   components: {
     Login
   },
-  
+
   methods: {
-    setloggedIn(){
+    setloggedIn() {
       this.$emit('login');
     },
   },
@@ -30,30 +30,33 @@ export default {
 
 <!-- style elements -->
 <style>
-.textbox{
-width: 580px;
+.textbox {
+  width: 580px;
 }
-.submit{
-align:center;
+
+.submit {
+  align: center;
 }
 
 .background {
-    position: fixed;
-    width: 50%;
-    height: 100%;
-    background-color: pink;
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  background-color: pink;
 }
+
 .vl {
   margin-top: 60px;
-  border-left:2px solid black;
+  border-left: 2px solid black;
   padding-right: 25px;
   height: 500px;
 }
 
-.box{
+.box {
   margin-top: 40px;
 }
-.textheading{
+
+.textheading {
   padding-top: 50px;
   padding-left: 265px;
 }
