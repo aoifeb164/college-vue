@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-19T20:47:50+01:00
+@Last modified time: 2021-04-20T09:49:09+01:00
 -->
 
 <!-- CourseDeleteModal -->
@@ -46,28 +46,44 @@ export default {
     },
     //hides the component after delete button is selected
     hide(){
-      this.$refs.enrolmentDeleteModal.hide();
+      this.$refs.courseDeleteModal.hide();
     },
 
     //called when wanting to delete course
     deleteCourse(){
-
-      console.log(this.courseId);
-      let token = localStorage.getItem('token');
-
-      // delete course from courses with this course id
-      axios.delete(`/courses/${this.courseId}`, {
-        headers: {
-          Authorization: "Bearer " + token
-        }
-      })
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log(error)
-        console.log(error.response.data)
-      })
+      //
+      // console.log(this.courseId);
+      // let token = localStorage.getItem('token');
+      //
+      // // delete course from courses with this course id
+      // axios.delete(`/courses/${this.courseId}`, {
+      //   headers: {
+      //     Authorization: "Bearer " + token
+      //   }
+      // })
+      // .then(response => {
+      //   console.log(response.data);
+      // })
+      // .catch(error => {
+      //   console.log(error)
+      //   console.log(error.response.data)
+      // })
+      let listOfDeleteRequests = this.course.enrolments.map((current, index) => axios.delete("/api/enrolments/" +
+      current.id, {headers: { Authorization: "Bearer " + token }}
+    ));
+// log the contents of listOfDeleteRequests
+      axios.all(listOfDeleteRequests)
+      .then(function(response) {
+        axios.delete("/api/courses/" + this.course.id, {
+          headers: { Authorization: "Bearer " + token }
+        })
+        .then(function(response) {
+          // do something
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+      });
     }
     },
   }

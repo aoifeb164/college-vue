@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-14T15:42:31+01:00
+@Last modified time: 2021-04-20T08:44:09+01:00
 -->
 
 <!-- Lecturer edit form
@@ -87,7 +87,6 @@ this.getLecturer();
      //editing and updating the enrolmet with information inputed in the form
     editLecturer() {
       let token = localStorage.getItem('token');
-
 
       axios.put(`/lecturers/${this.$route.params.id}`, {
         name: this.form.name,
