@@ -1,4 +1,12 @@
 # college-vue
+## Installation Instructions
+
+Follow these steps to install the application:
+## Clone repository
+```
+
+git clone
+```
 
 ## Project setup
 ```

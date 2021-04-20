@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-20T14:48:08+01:00
+@Last modified time: 2021-04-20T16:41:16+01:00
 -->
 
 <!-- LecturerDeleteModal -->
@@ -50,40 +50,41 @@ export default {
     //called when wanting to delete lecturer
     deleteLecturer(){
        console.log(this.lecturerId);
-      // let token = localStorage.getItem('token');
-      //
-      // // delete lecturer from lecturers with this lecturer id
-      // axios.delete(`/lecturers/${this.lecturerId}`, {
-      //   headers: {
-      //     Authorization: "Bearer " + token
-      //   }
-      // })
-      // .then(response => {
-      //   console.log(response.data);
-      // })
-      // .catch(error => {
-      //   console.log(error)
-      //   console.log(error.response.data)
-      // })
       let token = localStorage.getItem('token');
-      let listOfDeleteRequests = this.lecturer.enrolments.map((current) => axios.delete("/api/enrolments/" +
-      current.id, {headers: { Authorization: "Bearer " + token }}
-    ));
-// log the contents of listOfDeleteRequests
-      axios.all(listOfDeleteRequests)
-      .then((response) => {
-        axios.delete(`/lecturers/${this.lecturerId}`, {
-          headers: { Authorization: "Bearer " + token }
-        })
-        .then((response) => {
-          console.log(response.data);
 
-        })
-        .catch((error) => {
-          console.log(error);
-          console.log(response.data);
-        });
-      });
+      // delete lecturer from lecturers with this lecturer id
+      axios.delete(`/lecturers/${this.lecturerId}`, {
+        headers: {
+          Authorization: "Bearer " + token
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log(error)
+        console.log(error.response.data)
+      })
+      //deletion handling attempt
+//       let token = localStorage.getItem('token');
+//       let listOfDeleteRequests = this.lecturer.enrolments.map((current) => axios.delete("/api/enrolments/" +
+//       current.id, {headers: { Authorization: "Bearer " + token }}
+//     ));
+// // log the contents of listOfDeleteRequests
+//       axios.all(listOfDeleteRequests)
+//       .then((response) => {
+//         axios.delete(`/lecturers/${this.lecturerId}`, {
+//           headers: { Authorization: "Bearer " + token }
+//         })
+//         .then((response) => {
+//           console.log(response.data);
+//
+//         })
+//         .catch((error) => {
+//           console.log(error);
+//           console.log(response.data);
+//         });
+//       });
     }
     },
   }

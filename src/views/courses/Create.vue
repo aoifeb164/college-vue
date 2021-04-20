@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-19T21:14:44+01:00
+@Last modified time: 2021-04-20T16:43:18+01:00
 -->
 <!--
 course create form
@@ -88,9 +88,7 @@ export default {
         //redirect back to courses index
         .then(response => {
           console.log(response.data);
-          this.$router.push({
-            name: 'courses_index'
-          });
+          this.$router.push({ name: 'courses_index'});
         })
         .catch(error => {
           console.log(error)
