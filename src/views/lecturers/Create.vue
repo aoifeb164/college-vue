@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:20+00:00
-@Last modified time: 2021-04-14T15:42:24+01:00
+@Last modified time: 2021-04-20T12:16:35+01:00
 -->
 
 <!-- lecturer create form
@@ -26,7 +26,7 @@ enter email -->
     </b-form-group>
 </b-form>
 
-<!-- submit button calling the createLecturer method -->
+<!--  button to create lecturer calling the createLecturer method -->
 <div class=" text-center arrow">
   <b-button variant="outline">
     <b-icon variant="outline-dark" @click="createLecturer()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#292f33" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
@@ -41,6 +41,7 @@ enter email -->
 <script>
 import axios from '@/config/api';
 
+// creates local registration of component
 export default {
   name: 'LecturersCreate',
   components: {
@@ -61,10 +62,10 @@ export default {
   },
   methods: {
 
-    //called when wanting to create a new library
+    //called when wanting to create a new lecturer
     createLecturer() {
       let token = localStorage.getItem('token');
-      //created new lecturer in lecturer withthe information entered in the form using post request
+      //created new lecturer in lecturer with the information entered in the form using post request
       axios.post('/lecturers', {
         name: this.form.name,
         address: this.form.address,
@@ -74,7 +75,7 @@ export default {
       {
         headers: { Authorization: "Bearer " + token}
       })
-      //redirect back to enrolments index
+      //redirect back to lecturers index
       .then(response => {
         console.log(response.data);
         this.$router.push({ name: 'lecturers_index' });

@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-04-14T15:12:26+01:00
+@Last modified time: 2021-04-20T15:00:43+01:00
 -->
 
 <!-- lecturers index -->
@@ -71,6 +71,7 @@ importing LecturerDeleteModal from the components folder -->
 import axios from '@/config/api'
 import LecturerDeleteModal from '@/components/LecturerDeleteModal.vue'
 
+// creates local registration of component
 export default {
   name: 'lecturerIndex',
   components: {
@@ -108,7 +109,7 @@ selectedLecturer:0,
   },
   methods: {
 
-    //called when wanting to display the LecturerDeleteModal
+    //called on delete button when wanting to display the LecturerDeleteModal
     showDeleteModal(lecturerId) {
       this.selectedLecturer = lecturerId
       this.$refs.LecturerDeleteModal.show();

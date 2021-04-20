@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-19T20:48:04+01:00
+@Last modified time: 2021-04-20T10:04:38+01:00
 -->
 
 <!-- EnrolementDeleteModal -->
@@ -12,8 +12,6 @@
     </b-row>
 
     <b-row align="center">
-      <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
-
       <!-- submit button that calls deleteEnrolment method and hide method-->
       <b-button @click="deleteEnrolment(); hide();" variant="danger" class="button"> delete</b-button>
     </b-row>

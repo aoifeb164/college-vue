@@ -1,6 +1,6 @@
 /**
  * @Date:   2021-02-21T12:53:07+00:00
- * @Last modified time: 2021-04-07T12:10:16+01:00
+ * @Last modified time: 2021-04-20T10:52:53+01:00
  */
 
 import Vue from 'vue'
@@ -40,14 +40,14 @@ export default new Router({
       component:Dashboard
     },
     {
-      path: '/courses/create',
-      name: 'courses_create',
-      component:CoursesCreate
-    },
-    {
       path: '/courses',
       name: 'courses_index',
       component:CoursesIndex
+    },
+    {
+      path: '/courses/create',
+      name: 'courses_create',
+      component:CoursesCreate
     },
     {
       path: '/courses/show',
@@ -61,14 +61,14 @@ export default new Router({
     },
 
     {
-      path: '/lecturers/create',
-      name: 'lecturers_create',
-      component:LecturersCreate
-    },
-    {
       path: '/lecturers',
       name: 'lecturers_index',
       component:LecturersIndex
+    },
+    {
+      path: '/lecturers/create',
+      name: 'lecturers_create',
+      component:LecturersCreate
     },
     {
       path: '/lecturers/show',
@@ -82,14 +82,14 @@ export default new Router({
     },
 
     {
-      path: '/enrolments/create',
-      name: 'enrolments_create',
-      component:EnrolmentsCreate
-    },
-    {
       path: '/enrolments',
       name: 'enrolments_index',
       component:EnrolmentsIndex
+    },
+    {
+      path: '/enrolments/create',
+      name: 'enrolments_create',
+      component:EnrolmentsCreate
     },
     {
       path: '/enrolments/show',

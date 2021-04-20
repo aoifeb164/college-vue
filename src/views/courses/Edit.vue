@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:58:35+00:00
-@Last modified time: 2021-04-19T21:14:53+01:00
+@Last modified time: 2021-04-20T12:03:27+01:00
 -->
 
 <!-- Course edit form
@@ -100,7 +100,6 @@ export default {
     //called on arrow button when wanting to edit and update the course with the information inputed in the form
     editCourse() {
       let token = localStorage.getItem('token');
-
 
       axios.put(`/courses/${this.$route.params.id}`, {
           title: this.form.title,

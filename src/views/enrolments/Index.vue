@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-28T19:54:47+00:00
-@Last modified time: 2021-04-14T15:06:40+01:00
+@Last modified time: 2021-04-20T12:10:55+01:00
 -->
 
 <!-- enrolemts index -->
@@ -73,6 +73,7 @@ importing EnrolmentDeleteModal from the components folder -->
 import axios from '@/config/api';
 import EnrolmentDeleteModal from '@/components/EnrolmentDeleteModal.vue'
 
+// creates local registration of component
 export default {
   name: 'enrolmentIndex',
   components: {
@@ -121,7 +122,7 @@ selectedEnrolment:0,
    this.getEnrolments();
   },
   methods: {
-   //called when wanting to display the EnrolmentDeleteModal
+     //called on delete button when wanting to display the EnrolmentDeleteModal
     showDeleteModal(enrolmentId) {
       this.selectedEnrolment = enrolmentId
       this.$refs.EnrolmentDeleteModal.show();
@@ -156,8 +157,5 @@ selectedEnrolment:0,
 <style>
 .home {
   text-align: center;
-}
-.view {
-   /* margin-bottom: 50px!important; */
 }
 </style>

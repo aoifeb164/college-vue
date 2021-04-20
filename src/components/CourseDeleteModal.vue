@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-23T12:25:47+00:00
-@Last modified time: 2021-04-20T09:49:09+01:00
+@Last modified time: 2021-04-20T13:24:59+01:00
 -->
 
 <!-- CourseDeleteModal -->
@@ -11,10 +11,9 @@
       <h5 class="text">Are you sure you want to delete this course?</h5>
     </b-row>
 
-    <!-- submit button that calls deleteCourse method and hide method-->
     <b-row align="center">
-      <b-button class="delete-modal-button" @click="hide();" variant="light"></b-button>
-      <b-button @click="deleteCourse();  hide();" variant="danger" class="button">Delete</b-button>
+        <!-- submit button that calls deleteCourse method and hide method-->
+      <b-button @click="deleteCourse(); hide();" variant="danger" class="button">Delete</b-button>
     </b-row>
 
   </b-modal>
@@ -51,7 +50,6 @@ export default {
 
     //called when wanting to delete course
     deleteCourse(){
-      //
       // console.log(this.courseId);
       // let token = localStorage.getItem('token');
       //
@@ -67,21 +65,24 @@ export default {
       // .catch(error => {
       //   console.log(error)
       //   console.log(error.response.data)
-      // })
-      let listOfDeleteRequests = this.course.enrolments.map((current, index) => axios.delete("/api/enrolments/" +
+      // })tha
+      let token = localStorage.getItem('token');
+      let listOfDeleteRequests = this.course.enrolments.map((current) => axios.delete("/api/enrolments/" +
       current.id, {headers: { Authorization: "Bearer " + token }}
     ));
 // log the contents of listOfDeleteRequests
       axios.all(listOfDeleteRequests)
-      .then(function(response) {
+      .then((response) => {
         axios.delete("/api/courses/" + this.course.id, {
           headers: { Authorization: "Bearer " + token }
         })
-        .then(function(response) {
-          // do something
+        .then((response) => {
+          console.log(response.data);
+
         })
-        .catch(function(error) {
+        .catch((error) => {
           console.log(error);
+          console.log(response.data);
         });
       });
     }
@@ -98,6 +99,6 @@ export default {
     margin-left: 45px;
   }
   .button{
-    margin-left:180px;
+    margin-left:210px;
   }
   </style>

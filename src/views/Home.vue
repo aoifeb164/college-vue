@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-02-21T12:52:16+00:00
-@Last modified time: 2021-04-19T21:15:45+01:00
+@Last modified time: 2021-04-20T13:31:48+01:00
 -->
 <template>
  <div class="container">
@@ -19,6 +19,7 @@ export default {
   components: {
     Login
   },
+  
   methods: {
     setloggedIn(){
       this.$emit('login');

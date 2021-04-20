@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-24T15:07:27+00:00
-@Last modified time: 2021-04-14T15:42:10+01:00
+@Last modified time: 2021-04-20T12:03:25+01:00
 -->
 
 <!-- Enrolment edit form
@@ -40,8 +40,7 @@ select lecturer from dropdown -->
     </b-form-group>
 </b-form>
 
-<!-- submit button to edit enrolment
-calls editEnrolment method -->
+<!-- submit button to edit enrolment calls editEnrolment method -->
 <div class=" text-center arrow">
   <b-button variant="outline">
     <b-icon variant="outline-dark" @click="editEnrolment()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#292f33" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
@@ -56,6 +55,7 @@ calls editEnrolment method -->
 <script>
 import axios from '@/config/api';
 
+// creates local registration of component
 export default {
   name: 'EnrolmentsEdit',
   components: {
@@ -74,7 +74,6 @@ export default {
       errors: {}
     }
   },
-
 
   mounted(){
 this.getEnrolment();
@@ -105,11 +104,10 @@ this.getLecturers();
        })
      },
 
-     //editing and updating the enrolment with information inputed in the form
+    //called on arrow button when wanting to edit and update the enrolment with the information inputed in the form
     editEnrolment() {
       let token = localStorage.getItem('token');
-
-
+      
       axios.put(`/enrolments/${this.$route.params.id}`, {
         date: this.form.date,
         time: this.form.time,

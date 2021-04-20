@@ -1,6 +1,6 @@
 <!--
 @Date:   2021-03-02T16:37:06+00:00
-@Last modified time: 2021-04-14T15:36:48+01:00
+@Last modified time: 2021-04-20T12:27:48+01:00
 -->
 
 <!-- lecturer show page
@@ -43,6 +43,7 @@ displaying the info related to the chosen lecturer -->
 <script>
 import axios from '@/config/api';
 
+// creates local registration of component
 export default {
   name: 'LecturerShow',
   components: {
